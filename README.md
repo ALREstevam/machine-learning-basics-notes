@@ -20,5 +20,5 @@ Some code examples in:
 ## Topics
 
 1. [Linear Algebra](./1_linear_algebra/linear-algebra.md.html)
-2. [Multivariate Calculus](./2_multivariate_calculus/multivari. ate_calculus.md.html)
+2. [Multivariate Calculus](./2_multivariate_calculus/multivariate_calculus.md.html)
 
