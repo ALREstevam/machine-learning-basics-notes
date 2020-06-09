@@ -1,0 +1,2093 @@
+<p>[TOC]</p>
+<h1 id="multivariate-calculus">Multivariate Calculus</h1>
+<h2 id="notation-problem">Notation problem</h2>
+<p>Different people invented / contributed to calculus over time - each one has chosen to use a notation</p>
+<p>Some notations are better to the applications that they're invented for</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203182208329.png" alt="image-20200203182208329" />
+<p class="caption">image-20200203182208329</p>
+</div>
+<h2 id="functions">Functions</h2>
+<pre><code>INPUTS (a, b, c, ...) =&gt;  [FUNCTION]  =&gt; OUTPUTS (p, q, r, ...)</code></pre>
+<p><span class="math inline"><em>f</em>(<em>x</em>)=<em>x</em>²+3</span></p>
+<p><span class="math inline"><em>f</em>(<em>x</em>)=<em>f</em>(<em>x</em>)+<em>g</em>(<em>r</em> + <em>a</em>)</span></p>
+<p><strong>Context</strong></p>
+<ul>
+<li>Functions are not multiplication</li>
+<li>Missing variables can be constants</li>
+</ul>
+<p><strong>Modeling the world</strong></p>
+<ul>
+<li>To choose a function that represent some data</li>
+<li>The function is a hypothesis - it describes the real world</li>
+</ul>
+<p><strong>Calculus</strong></p>
+<ul>
+<li><em>To investigate how functions change with respect to they input variables</em></li>
+<li>Manipulate functions</li>
+<li>A set of tools</li>
+</ul>
+<h1 id="rise-over-run---speed-vs-time">Rise over run - speed vs time</h1>
+<div class="figure">
+<embed src="multivariate_calculus.assets/giphy.webp" />
+<p class="caption">img</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203183016487.png" alt="image-20200203183016487" />
+<p class="caption">image-20200203183016487</p>
+</div>
+<ul>
+<li>The speed is not constant</li>
+<li>It's accelerating in the beginning and stopping at the end</li>
+<li>==The slope indicates how great the acceleration is==</li>
+</ul>
+<blockquote>
+<p><strong>Acceleration</strong> is the local gradient of a speed-time graph</p>
+<p>Is a function of time (in this example)</p>
+</blockquote>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203183221507.png" alt="image-20200203183221507" />
+<p class="caption">image-20200203183221507</p>
+</div>
+<p>Using the tangent over a point to see the slope at that point</p>
+<p>The slope change can then be plotted to show <strong>acceleration x time</strong> instead of <strong>speed x time</strong></p>
+<div class="figure">
+<embed src="multivariate_calculus.assets/giphy-1580857867834.webp" />
+<p class="caption">img</p>
+</div>
+<p>Constant speed = zero gradient = zero acceleration over time</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203183419685.png" alt="image-20200203183419685" />
+<p class="caption">image-20200203183419685</p>
+</div>
+<p>Orange line = acceleration = <code>space * time ^ 2</code></p>
+<p>This is the <strong>first derivative</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203183542464.png" alt="image-20200203183542464" />
+<p class="caption">image-20200203183542464</p>
+</div>
+<p>The **second derivative can be taken from plotting the slope change in the acceleration function.</p>
+<p>It its related to the car starting and stopping</p>
+<p>Thinking about what curve generates that derivative is called <strong>anti-derivative</strong>, or <strong>integral</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203183915205.png" alt="image-20200203183915205" />
+<p class="caption">image-20200203183915205</p>
+</div>
+<p>In this graph it shows the distance covered by the car - how much distance are covered per unit time - or just the speed</p>
+<h1 id="derivatives---definition">Derivatives - definition</h1>
+<h2 id="rise-over-run-of-a-linear-function">Rise over run of a linear function</h2>
+<ul>
+<li>The linear function has the same gradient everywhere</li>
+</ul>
+<p>The slope of that line is represented by the amount of growth between two points (an interval) divided by the length of the considered interval - this is called <em>rise over run</em></p>
+<ul>
+<li><strong>Rise</strong> - increase in the vertical direction</li>
+<li><strong>Run</strong> - distance along the horizontal axis</li>
+</ul>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203192326580.png" alt="image-20200203192326580" />
+<p class="caption">image-20200203192326580</p>
+</div>
+<h1 id="rise-over-run-for-more-complex-functions">Rise over run for more complex functions</h1>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203192409289.png" alt="image-20200203192409289" />
+<p class="caption">image-20200203192409289</p>
+</div>
+<p>The rise over run changes depending on the chosen points</p>
+<p><strong>What is the rise over run at a single point ?</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203192506815.png" alt="image-20200203192506815" />
+<p class="caption">image-20200203192506815</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203192538341.png" alt="image-20200203192538341" />
+<p class="caption">image-20200203192538341</p>
+</div>
+<p>Defining the second point at a <span class="math inline"><em>Δ</em><em>x</em></span> distance from the first one - we can use <span class="math inline"><em>f</em>(<em>x</em>)</span> to determinate they <span class="math inline"><em>y</em></span> position</p>
+<p>Now, writing a function for any <span class="math inline"><em>x</em></span> based on the rise over run concept</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203192749351.png" alt="image-20200203192749351" />
+<p class="caption">image-20200203192749351</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203192807182.png" alt="image-20200203192807182" />
+<p class="caption">image-20200203192807182</p>
+</div>
+<div class="figure">
+<embed src="multivariate_calculus.assets/giphy-1580857913183.webp" />
+<p class="caption">img</p>
+</div>
+<p>With smaller values of <span class="math inline"><em>Δ</em><em>x</em></span>, the result becomes a better representation of the gradient</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203192930481.png" alt="image-20200203192930481" />
+<p class="caption">image-20200203192930481</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203192954206.png" alt="image-20200203192954206" />
+<p class="caption">image-20200203192954206</p>
+</div>
+<p>This concept can be expressed with limits - so, we want to know the gradient for an <span class="math inline"><em>Δ</em><em>x</em></span> as small as possible / needed</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203193052130.png" alt="image-20200203193052130" />
+<p class="caption">image-20200203193052130</p>
+</div>
+<p>Then, we can get the slope for any single point in the function</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203193203309.png" alt="image-20200203193203309" />
+<p class="caption">image-20200203193203309</p>
+</div>
+<p>This is often represented with the notation <br /><span class="math display">$$
+\frac{df}{dx} = f'(x)
+$$</span><br /> Note that <span class="math inline"><em>d</em><em>x</em></span> is <strong>not</strong> zero</p>
+<ol style="list-style-type: decimal">
+<li><p>because we can't divide by zero - but it's a number <strong>really</strong> close to it</p></li>
+<li>we could make our results better as we <em>&quot;zoom in&quot;</em> at the point by making it smaller as we get closer</li>
+<li><p>If we are far away, a value further from zero wouldn't make that of a difference</p></li>
+</ol>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203200109325.png" alt="image-20200203200109325" />
+<p class="caption">image-20200203200109325</p>
+</div>
+<h1 id="meanings">Meanings</h1>
+<div class="figure">
+<embed src="multivariate_calculus.assets/giphy-1582315807738.webp" />
+<p class="caption">https://i.giphy.com/media/1SZAA5izDA6Ji/giphy.webp</p>
+</div>
+<p>https://math.dartmouth.edu/opencalc2/cole/lecture8.pdf</p>
+<p><strong>Critical point</strong>: a point where the slope is <span class="math inline">0</span>, often a local maximum or minimum</p>
+<p>Imagine that a certain city got a single train railway, connecting any number of stations</p>
+<h2 id="the-first-derivative-fx">The first derivative <span class="math inline"><em>f</em>′(<em>x</em>)</span></h2>
+<p>Is the <strong>slope</strong> of the <strong>tangent line</strong> to a function at the point <span class="math inline"><em>x</em></span></p>
+<p>It tells us <strong>whether</strong> and <strong>how much</strong> a function is <em>increasing</em> or <em>decreasing</em></p>
+<ul>
+<li><span class="math inline"><em>s</em><em>l</em><em>o</em><em>p</em><em>e</em> &gt; 0 @ <em>x</em></span>: the function is <em>increasing</em> at that point - <em>as <span class="math inline"><em>x</em></span> increases, <span class="math inline"><em>f</em>(<em>x</em>)</span> also increases</em></li>
+<li><span class="math inline"><em>s</em><em>l</em><em>o</em><em>p</em><em>e</em> &lt; 0 @ <em>x</em></span>: the function is <em>decreasing</em> at that point - <em>as <span class="math inline"><em>x</em></span> increases, <span class="math inline"><em>f</em>(<em>x</em>)</span> decreases</em></li>
+<li><span class="math inline"><em>s</em><em>l</em><em>o</em><em>p</em><em>e</em> = 0 @ <em>x</em></span>: <em>doesn't tell anything in particular</em>, the function may be increasing, decreasing at a <em>local maximum or minimum</em></li>
+</ul>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200221164614867.png" alt="image-20200221164614867" />
+<p class="caption">image-20200221164614867</p>
+</div>
+<p><strong>Other properties</strong></p>
+<ul>
+<li>When <span class="math inline"><em>f</em>′(<em>x</em>)=0</span> (roots of the derivative) <span class="math inline"><em>f</em>(<em>x</em>)</span> is at a local maximum or minimum - <em>it shows the critical points of <span class="math inline"><em>f</em>(<em>x</em>)</span></em></li>
+</ul>
+<p><strong>In summary</strong>, the <em>first derivative</em> measures the ==rate of change== of a certain function. If we have a function <span class="math inline"><em>f</em>(<em>x</em>)</span> where the <span class="math inline"><em>x</em></span> axis indicates time and the <span class="math inline"><em>y</em></span> axis t</p>
+<h2 id="the-second-derivative-fx">The second derivative <span class="math inline"><em>f</em>″(<em>x</em>)</span></h2>
+<p>Note that the first derivative does tell where the critical points are, but it cannot show if they're rather local <em>maximums</em> or local <em>minimums</em> - the <strong>second derivative can</strong> tell this</p>
+<p>If the <strong>first derivative</strong> shows that there are a critical point at <span class="math inline"><em>x</em></span>, i.e. <span class="math inline"><em>f</em>′(<em>x</em>)=0</span></p>
+<ul>
+<li>if <span class="math inline"><em>f</em>″(<em>x</em>)&gt;0</span> then <span class="math inline"><em>f</em>(<em>x</em>)</span> has a local <em>minimum</em> and <span class="math inline"><em>f</em>′(<em>x</em>)</span> is <em>increasing</em> at that point, therefore, the curve around it is <em>concave</em>, pointing <em>down</em></li>
+<li>if <span class="math inline"><em>f</em>″(<em>x</em>)&lt;0</span> then <span class="math inline"><em>f</em>(<em>x</em>)</span> has a local <em>maximum</em> and <span class="math inline"><em>f</em>′(<em>x</em>)</span> is <em>decreasing</em> at that point, therefore, the curve around it is <em>convex</em>, pointing <em>up</em></li>
+<li>if <span class="math inline"><em>f</em>″(<em>x</em>)=0</span> then we <em>don't learn any new information</em> about the point - it may be a local maximum or minimum or the function may be increasing or decreasing</li>
+</ul>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200221170223692.png" alt="image-20200221170223692" />
+<p class="caption">image-20200221170223692</p>
+</div>
+<h1 id="sum-rule">Sum rule</h1>
+<div class="figure">
+<img src="https://media.giphy.com/media/SXx6ayaHyUzJVcXrX6/giphy.gif" alt="https://media.giphy.com/media/SXx6ayaHyUzJVcXrX6/giphy.gif" />
+<p class="caption">https://media.giphy.com/media/SXx6ayaHyUzJVcXrX6/giphy.gif</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203200127031.png" alt="image-20200203200127031" />
+<p class="caption">image-20200203200127031</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200203201946281.png" alt="image-20200203201946281" />
+<p class="caption">image-20200203201946281</p>
+</div>
+<p><strong>Example</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204173351532.png" alt="image-20200204173351532" />
+<p class="caption">image-20200204173351532</p>
+</div>
+<h1 id="power-rule">Power rule</h1>
+<div class="figure">
+<embed src="multivariate_calculus.assets/giphy-1580858403889.webp" />
+<p class="caption">img</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204173309744.png" alt="image-20200204173309744" />
+<p class="caption">image-20200204173309744</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200205182511189.png" alt="image-20200205182511189" />
+<p class="caption">image-20200205182511189</p>
+</div>
+<h1 id="special-cases">Special Cases</h1>
+<h2 id="fx-1x"><br /><span class="math display"><em>f</em>(<em>x</em>)=1/<em>x</em></span><br /></h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204173557856.png" alt="image-20200204173557856" />
+<p class="caption">image-20200204173557856</p>
+</div>
+<p>The gradient is <strong>negative</strong> everywhere except at <span class="math inline"><em>x</em> = 0</span>, but at this point we can't see the gradient</p>
+<p>The function has a <strong>discontinuity</strong> because at <span class="math inline"><em>x</em> = 0</span>, <span class="math inline">1/<em>x</em> = 1/0</span> is not defined</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204181134316.png" alt="image-20200204181134316" />
+<p class="caption">image-20200204181134316</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204181149984.png" alt="image-20200204181149984" />
+<p class="caption">image-20200204181149984</p>
+</div>
+<h2 id="fx-fx---the-function-is-its-own-gradient"><span class="math inline"><em>f</em>(<em>x</em>)=<em>f</em>′(<em>x</em>)</span> - the function is its own gradient</h2>
+<h3 id="positive-case">Positive case</h3>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204181341928.png" alt="image-20200204181341928" />
+<p class="caption">image-20200204181341928</p>
+</div>
+<p>Besides <span class="math inline"><em>f</em>(<em>x</em>)=0</span>, only one function fit the criteria</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204181415212.png" alt="image-20200204181415212" />
+<p class="caption">image-20200204181415212</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204181428826.png" alt="image-20200204181428826" />
+<p class="caption">image-20200204181428826</p>
+</div>
+<p><span class="math inline"><em>e</em></span> is a universal constant</p>
+<p><span class="math inline"><em>f</em>(<em>x</em>)=<em>e</em><sup><em>x</em></sup></span></p>
+<p><span class="math inline"><em>f</em>′(<em>x</em>)=<em>e</em><sup><em>x</em></sup></span></p>
+<p><span class="math inline"><em>f</em>″(<em>x</em>)=<em>e</em><sup><em>x</em></sup></span></p>
+<p><span class="math inline"><em>f</em>‴(<em>x</em>)=<em>e</em><sup><em>x</em></sup></span></p>
+<p><span class="math inline">...</span></p>
+<h2 id="sin-and-cos">Sin and Cos</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204181707350.png" alt="image-20200204181707350" />
+<p class="caption">image-20200204181707350</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204181722820.png" alt="image-20200204181722820" />
+<p class="caption">image-20200204181722820</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204181730808.png" alt="image-20200204181730808" />
+<p class="caption">image-20200204181730808</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204181748413.png" alt="image-20200204181748413" />
+<p class="caption">image-20200204181748413</p>
+</div>
+<p>The trigonometric functions are really exponential functions</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204181824045.png" alt="image-20200204181824045" />
+<p class="caption">image-20200204181824045</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204182540826.png" alt="image-20200204182540826" />
+<p class="caption">image-20200204182540826</p>
+</div>
+<h1 id="product-rule">Product rule</h1>
+<p><img src="https://media.giphy.com/media/gMHFX7PEDZEHK/giphy.gif" alt="img" style="zoom:100%;" /></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204182701045.png" alt="image-20200204182701045" />
+<p class="caption">image-20200204182701045</p>
+</div>
+<p>If we differentiate <span class="math inline"><em>f</em>(<em>x</em>)*<em>g</em>(<em>x</em>)</span> what we are really looking for is the change in area of the rectangle as we vary <span class="math inline"><em>x</em></span></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204182818807.png" alt="image-20200204182818807" />
+<p class="caption">image-20200204182818807</p>
+</div>
+<p>Adding <span class="math inline"><em>Δ</em><em>x</em></span> to <span class="math inline"><em>x</em></span> the size of the rectangle changes - in this case both sides happily increase (easier to see the concept).</p>
+<p>We can subdivide the new rectangle in smaller rectangles, one of them has the same size of the original one.</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204183023373.png" alt="image-20200204183023373" />
+<p class="caption">image-20200204183023373</p>
+</div>
+<p>Then we can calculate the width and height of the other rectangles</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204183140439.png" alt="image-20200204183140439" />
+<p class="caption">image-20200204183140439</p>
+</div>
+<p>We can then write an expression only for the area of the new rectangles</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204183228358.png" alt="image-20200204183228358" />
+<p class="caption">image-20200204183228358</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204183259578.png" alt="image-20200204183259578" />
+<p class="caption">image-20200204183259578</p>
+</div>
+<p>As <span class="math inline"><em>Δ</em><em>x</em></span> approaches <span class="math inline">0</span>, <strong>all</strong> rectangles will shrink, <strong>but</strong>, analyzing the equations, note that the <strong>smaller</strong> rectangle will shrink the fastest</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204183511943.png" alt="image-20200204183511943" />
+<p class="caption">image-20200204183511943</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204183533802.png" alt="image-20200204183533802" />
+<p class="caption">image-20200204183533802</p>
+</div>
+<p>We can ultimately disconsider the area of the smaller rectangle</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204183715435.png" alt="image-20200204183715435" />
+<p class="caption">image-20200204183715435</p>
+</div>
+<p>The limit will be calculated by</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204183742193.png" alt="image-20200204183742193" />
+<p class="caption">image-20200204183742193</p>
+</div>
+<p>It's useful to rearrange it in the following way:</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204183833803.png" alt="image-20200204183833803" />
+<p class="caption">image-20200204183833803</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>Split into two fractions</li>
+</ol>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204183916140.png" alt="image-20200204183916140" />
+<p class="caption">image-20200204183916140</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Taking <span class="math inline"><em>f</em>(<em>x</em>)</span> and <span class="math inline"><em>g</em>(<em>x</em>)</span> out of the numerators</li>
+</ol>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204183952773.png" alt="image-20200204183952773" />
+<p class="caption">image-20200204183952773</p>
+</div>
+<p>Note that both fractions are just the derivatives for <span class="math inline"><em>g</em>(<em>x</em>)</span> and <span class="math inline"><em>f</em>(<em>x</em>)</span></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204184203429.png" alt="image-20200204184203429" />
+<p class="caption">image-20200204184203429</p>
+</div>
+<p>This can be rewritten as</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204184225657.png" alt="image-20200204184225657" />
+<p class="caption">image-20200204184225657</p>
+</div>
+<p><strong>Contemplate</strong> the product rule</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204184458800.png" alt="image-20200204184458800" />
+<p class="caption">image-20200204184458800</p>
+</div>
+<h1 id="chain-rule">Chain rule</h1>
+<h2 id="nested-functions">Nested functions</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204184940802.png" alt="image-20200204184940802" />
+<p class="caption">image-20200204184940802</p>
+</div>
+<ol style="list-style-type: decimal">
+<li><span class="math inline"><em>h</em>(  )</span> - how happy i am</li>
+<li><span class="math inline"><em>p</em>(  )</span> - how many pizzas i have eaten</li>
+<li><span class="math inline"><em>m</em></span> - how much money i make</li>
+</ol>
+<div class="figure">
+<img src="multivariate_calculus.assets/giphy.mp4.gif" alt="giphy.mp4" />
+<p class="caption">giphy.mp4</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/giphy.mp4-1580927018404.gif" alt="giphy.mp4" />
+<p class="caption">giphy.mp4</p>
+</div>
+<div class="figure">
+<img src="https://media.giphy.com/media/ND6xkVPaj8tHO/giphy.gif" />
+
+</div>
+<p>Note that we are relating the concept of <em>money</em> to <em>happiness</em>, but via the concept of <em>pizza</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204185200355.png" alt="image-20200204185200355" />
+<p class="caption">image-20200204185200355</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204185210557.png" alt="image-20200204185210557" />
+<p class="caption">image-20200204185210557</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204185243278.png" alt="image-20200204185243278" />
+<p class="caption">image-20200204185243278</p>
+</div>
+<p><strong>By knowing how much money i have now, how much effort should i put into making more, if my aim is to be happy?</strong></p>
+<p>So, we need to know the rate of change for happiness is with respect to money. Which is <span class="math inline"><em>d</em><em>h</em>/<em>d</em><em>m</em></span></p>
+<p>In this simple example we could just substitute one function into another and derive it</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204185710874.png" alt="image-20200204185710874" />
+<p class="caption">image-20200204185710874</p>
+</div>
+<p><strong>But</strong> the chain rule provides us with a more <em>elegant</em> solution that will work even for more complex functions, where simple plugging in into another (direct substitution) isn't an option.</p>
+<p>In this particular notation convention, the product looks like it would give the desired function - this approach is called the chain rule.</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204185827384.png" alt="image-20200204185827384" />
+<p class="caption">image-20200204185827384</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204185858151.png" alt="image-20200204185858151" />
+<p class="caption">image-20200204185858151</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/giphy.gif" alt="img" />
+<p class="caption">img</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204190059257.png" alt="image-20200204190059257" />
+<p class="caption">image-20200204190059257</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204190140585.png" alt="image-20200204190140585" />
+<p class="caption">image-20200204190140585</p>
+</div>
+<p>So, if we don't want <span class="math inline"><em>p</em><em>i</em><em>z</em><em>z</em><em>a</em><em>s</em></span> to appear in our final function, we just need to substitute <span class="math inline"><em>p</em></span> for its function in terms of <span class="math inline"><em>m</em></span></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204190256563.png" alt="image-20200204190256563" />
+<p class="caption">image-20200204190256563</p>
+</div>
+<p>Then rearranging the terms</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204190314549.png" alt="image-20200204190314549" />
+<p class="caption">image-20200204190314549</p>
+</div>
+<p><strong>Result</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200204190406445.png" alt="image-20200204190406445" />
+<p class="caption">image-20200204190406445</p>
+</div>
+<h1 id="taming-a-beast">Taming a beast</h1>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200229021835346.png" alt="image-20200229021835346" />
+<p class="caption">image-20200229021835346</p>
+</div>
+<p><strong>~The beast~</strong></p>
+<p><br /><span class="math display">$$
+f(x) = \frac{sin(2x^5 + 3x)}{e^{7x}}
+$$</span><br /> <img src="multivariate_calculus.assets/image-20200205163742436.png" alt="image-20200205163742436" /></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/marhs.png" alt="marhs" />
+<p class="caption">marhs</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200205192239815.png" alt="image-20200205192239815" />
+<p class="caption">image-20200205192239815</p>
+</div>
+<h1 id="multivariate-calculus-1">Multivariate calculus</h1>
+<p>Multiple input or output variables</p>
+<p><em>How to apply the concepts shown before to systems with multiple variables?</em></p>
+<h2 id="what-a-variable-is">What a variable is?</h2>
+<p><strong>1. One of the variables is a function of the other</strong></p>
+<p><span class="math inline"><em>y</em> = <em>f</em>(<em>x</em>)</span></p>
+<p><strong>2. Dependent variables</strong></p>
+<p>When we can say</p>
+<p><span class="math inline"><em>y</em> = <em>f</em>(<em>x</em>)</span></p>
+<p>But not</p>
+<p><span class="math inline"><em>x</em> = <em>g</em>(<em>y</em>)</span></p>
+<p>Because the other way around doesn't necessarily makes sense</p>
+<div class="figure">
+<embed src="https://i.giphy.com/media/12vOSPBV5oTveU/giphy.webp" />
+<p class="caption">img</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/giphy-1582149277333.gif" />
+
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206160347319.png" alt="image-20200206160347319" />
+<p class="caption">image-20200206160347319</p>
+</div>
+<p>The vehicle <em>speed</em> is a function of <em>time</em> because at each point in time, the vehicle can be at <strong>one</strong> and only one <em>speed</em></p>
+<p>However, we cannot say that <em>time</em> is a function of <em>speed</em>, because a same <em>speed</em> can happened at different points in <em>time</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206160555532.png" alt="image-20200206160555532" />
+<p class="caption">image-20200206160555532</p>
+</div>
+<p>Therefore, the <em>speed</em> is a <strong>dependent</strong> variable, because it depends on <em>time</em> and the <em>time</em> is the <strong>independent</strong> variable in this context</p>
+<blockquote>
+<p>Typically, when you first learn calculus, you take functions containing <em>variables</em> and <em>constants</em> and then <em>differentiate</em> the <strong>dependent</strong> variables (such as speed) in respect to the <strong>independent</strong> variables (such as time).</p>
+<p>However, what gets labeled as a <em>constant</em> or a <em>variable</em> can be subtler then expected - it will require you to understand the <strong>context</strong> of the problem being described</p>
+</blockquote>
+<p><em>The car example</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206161205415.png" alt="image-20200206161205415" />
+<p class="caption">image-20200206161205415</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206162559608.png" alt="image-20200206162559608" />
+<p class="caption">image-20200206162559608</p>
+</div>
+<blockquote>
+<p>But if you're a car designer, and have a target speed, then your speed becomes the constant and the mass and drag can be adjusted by changing the car's design</p>
+<p>TL; DR; - you can differentiate any term with respect with another - it depends on the context</p>
+</blockquote>
+<p><em>Another example</em> - designing a can</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206163842618.png" alt="image-20200206163842618" />
+<p class="caption">image-20200206163842618</p>
+</div>
+<p>In principle we could change about everything about the can, even the metal's density (except for <span class="math inline"><em>π</em></span> 🤷)</p>
+<p>So, let's find the derivative of the can's mass with respect to each variable</p>
+<div class="figure">
+<embed src="multivariate_calculus.assets/giphy-1582149390901.webp" />
+<p class="caption">img</p>
+</div>
+<blockquote>
+<p><strong>When differentiating in respect to some variable, simply consider all of the other variables to behave as constants</strong></p>
+</blockquote>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206165337634.png" alt="image-20200206165337634" />
+<p class="caption">image-20200206165337634</p>
+</div>
+<p>Note that the first term doesn't contains <span class="math inline"><em>h</em></span>, so the derivative of constants just becomes <span class="math inline">0</span>, as usual.</p>
+<p>The second term does contains <span class="math inline"><em>h</em></span>, and it is just multiplied by some constants - differentiating this leaves just those constants</p>
+<p>The partial derivative in respect to <span class="math inline"><em>h</em></span> doesn't even contains <span class="math inline"><em>h</em></span> because the mass will vary <em>linearly</em> with the height when all else is kept constant</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206165745508.png" alt="image-20200206165745508" />
+<p class="caption">image-20200206165745508</p>
+</div>
+<blockquote>
+<p>Note that the notation also changed - instead of the <span class="math inline">$\frac{dx}{dy}$</span> we're using <span class="math inline">$\frac{\partial x}{\partial y}$</span>, which indicates that we are differentiating a function of more then one variable</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/download.jpeg" alt="img" />
+<p class="caption">img</p>
+</div>
+</blockquote>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206171214984.png" alt="image-20200206171214984" />
+<p class="caption">image-20200206171214984</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206171320494.png" alt="image-20200206171320494" />
+<p class="caption">image-20200206171320494</p>
+</div>
+<blockquote>
+<p><strong>Partial differentiation</strong> is in essence just taking a multidimensional problem and pretending that it's a standard 1-D problem as we consider each variable separately</p>
+</blockquote>
+<h1 id="differentiate-with-respect-to-anything">Differentiate with respect to anything</h1>
+<p>Working on the example</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206171713105.png" alt="image-20200206171713105" />
+<p class="caption">image-20200206171713105</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206173207354.png" alt="image-20200206173207354" />
+<p class="caption">image-20200206173207354</p>
+</div>
+<h2 id="total-derivative">Total Derivative</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206171713105.png" alt="image-20200206171713105" />
+<p class="caption">image-20200206171713105</p>
+</div>
+<p>Imagine that the variables and were actually themselves a function of a single other parameter where:</p>
+<p><br /><span class="math display"><em>x</em> = <em>t</em> − 1</span><br /></p>
+<p><br /><span class="math display"><em>y</em> = <em>t</em>²</span><br /></p>
+<p><br /><span class="math display"><em>z</em> = 1/<em>t</em></span><br /> <img src="multivariate_calculus.assets/image-20200206173511532.png" alt="image-20200206173511532" /></p>
+<p>We are looking for the derivative of <span class="math inline"><em>x</em></span> with respect to <span class="math inline"><em>t</em></span></p>
+<p>In this simple case <span class="math inline"><em>t</em></span> can be directly substituted into the function and the derivative taken</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206173659787.png" alt="image-20200206173659787" />
+<p class="caption">image-20200206173659787</p>
+</div>
+<p>In a more more complicated scenario the <strong>chain</strong> rule comes in handy</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206173756507.png" alt="image-20200206173756507" />
+<p class="caption">image-20200206173756507</p>
+</div>
+<p>The derivative with respect to the variable <span class="math inline"><em>t</em></span> will be the sum of the chains of the three variables</p>
+<p>So we need to know the derivatives with respect to <span class="math inline"><em>t</em></span></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206174056331.png" alt="image-20200206174056331" />
+<p class="caption">image-20200206174056331</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206174205203.png" alt="image-20200206174205203" />
+<p class="caption">image-20200206174205203</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206174226337.png" alt="image-20200206174226337" />
+<p class="caption">image-20200206174226337</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200206174250351.png" alt="image-20200206174250351" />
+<p class="caption">image-20200206174250351</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/calscs.png" alt="calscs" />
+<p class="caption">calscs</p>
+</div>
+<iframe width="100%" height="600" src="https://www.youtube.com/embed/NO3AqAaAE6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Analogy</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200210183134072.png" alt="image-20200210183134072" />
+<p class="caption">image-20200210183134072</p>
+</div>
+<h1 id="jacobian">Jacobian</h1>
+<ul>
+<li>Brings in some of the ideas from linear algebra to build partial derivatives into something particularly useful</li>
+<li>The concept can be applied to a variety of different problems</li>
+</ul>
+<h2 id="jacobian-of-a-single-function-of-many-variables">Jacobian of a single function of many variables</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200210194919841.png" alt="image-20200210194919841" />
+<p class="caption">image-20200210194919841</p>
+</div>
+<ul>
+<li>The Jacobian is a <strong>vector</strong> where each entry is the <strong>partial derivative</strong> of <span class="math inline"><em>f</em></span> in respect to each one of those values in turn</li>
+<li>By convention is written as a <strong>row vector</strong> instead of a column vector</li>
+</ul>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200210195601341.png" alt="image-20200210195601341" />
+<p class="caption">image-20200210195601341</p>
+</div>
+<p><span class="math inline"><em>J</em></span> is a vector in which when we give it a specific <span class="math inline"><em>x</em>, <em>y</em>, <em>z</em></span> coordinate will return a <strong>vector</strong> pointing in the direction of <strong>steepest uphill slope</strong> of this function</p>
+<p>In this specific example, <span class="math inline"><em>z</em></span> is a <strong>constant</strong> which does not depend on the location selected</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200210200041371.png" alt="image-20200210200041371" />
+<p class="caption">image-20200210200041371</p>
+</div>
+<p>Another example</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200210200609217.png" alt="image-20200210200609217" />
+<p class="caption">image-20200210200609217</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200210200702413.png" alt="image-20200210200702413" />
+<p class="caption">image-20200210200702413</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200210200730457.png" alt="image-20200210200730457" />
+<p class="caption">image-20200210200730457</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200210200747198.png" alt="image-20200210200747198" />
+<p class="caption">image-20200210200747198</p>
+</div>
+<p>The <strong>steeper</strong> the slope grater the Jacobian becomes at that point</p>
+<p><em>Converting into a contour plot</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200210200912291.png" alt="image-20200210200912291" />
+<p class="caption">image-20200210200912291</p>
+</div>
+<p><em>Plotting Jacobian vectors</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200210201105828.png" alt="image-20200210201105828" />
+<p class="caption">image-20200210201105828</p>
+</div>
+<h1 id="jacobian-applied">Jacobian Applied</h1>
+<h2 id="example-i">Example I</h2>
+<p><br /><span class="math display"><em>f</em>(<em>x</em>, <em>y</em>)=<em>e</em><sup>−(<em>x</em>²+<em>y</em>²)</sup></span><br /></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211145931677.png" alt="image-20200211145931677" />
+<p class="caption">image-20200211145931677</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211152035296.png" alt="image-20200211152035296" />
+<p class="caption">image-20200211152035296</p>
+</div>
+<blockquote>
+<p>Remember kids</p>
+<p>If <br /><span class="math display"><em>f</em>(<em>x</em>)=<em>e</em><sup><em>g</em>(<em>x</em>)</sup></span><br /> Then <br /><span class="math display"><em>f</em>′(<em>x</em>)=<em>e</em><sup><em>g</em>(<em>x</em>)</sup> * <em>g</em>′(<em>x</em>)</span><br /> If we are dealing with multivariate calculus we will differentiate <span class="math inline"><em>g</em></span> with respect to some variable like <span class="math inline"><em>x</em></span> or <span class="math inline"><em>y</em></span></p>
+</blockquote>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211150055327.png" alt="image-20200211150055327" />
+<p class="caption">image-20200211150055327</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211150257357.png" alt="image-20200211150257357" />
+<p class="caption">image-20200211150257357</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211150429583.png" alt="image-20200211150429583" />
+<p class="caption">image-20200211150429583</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211154040514.png" alt="image-20200211154040514" />
+<p class="caption">image-20200211154040514</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211154907699.png" alt="image-20200211154907699" />
+<p class="caption">image-20200211154907699</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211155042059.png" alt="image-20200211155042059" />
+<p class="caption">image-20200211155042059</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211155048535.png" alt="image-20200211155048535" />
+<p class="caption">image-20200211155048535</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211155058704.png" alt="image-20200211155058704" />
+<p class="caption">image-20200211155058704</p>
+</div>
+<h2 id="example-ii">Example II</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211155203190.png" alt="image-20200211155203190" />
+<p class="caption">image-20200211155203190</p>
+</div>
+<p>This function receives a vector as the input but <strong>gives also a vector as the output</strong></p>
+<p>We can think about this problem as being contained by two vector spaces, one for <span class="math inline"><em>u</em>, <em>v</em></span> and another to <span class="math inline"><em>x</em>, <em>y</em></span></p>
+<p>Each point in <span class="math inline"><em>x</em>, <em>y</em></span> has a corresponding point in <span class="math inline"><em>u</em>, <em>v</em></span></p>
+<p>As we move in <span class="math inline"><em>x</em>, <em>y</em></span>, we also move in <span class="math inline"><em>u</em>, <em>v</em></span>, but making a different path</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211155219473.png" alt="image-20200211155219473" />
+<p class="caption">image-20200211155219473</p>
+</div>
+<p>The <em>Jacobian</em> can them be represented as a matrix by stacking the rows</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211155258872.png" alt="image-20200211155258872" />
+<p class="caption">image-20200211155258872</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211155910871.png" alt="image-20200211155910871" />
+<p class="caption">image-20200211155910871</p>
+</div>
+<p>This matrix is just a transformation from <span class="math inline"><em>x</em>, <em>y</em></span> space to <span class="math inline"><em>u</em>, <em>v</em></span> space</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211160059824.png" alt="image-20200211160059824" />
+<p class="caption">image-20200211160059824</p>
+</div>
+<h2 id="example-iii">Example III</h2>
+<p>Many of the functions aren't so nice</p>
+<p>They can be highly non-linear and much more complicated</p>
+<p><strong>But</strong> often they may still be smooth - by approximating enough we can say that a region is approximately linear</p>
+<p><strong>Therefore</strong> adding all the contributions from the <em>Jacobian</em> <em>determinants</em> at each point in space, we can still calculate the change in the size of a region after a transformation</p>
+<p><strong>TRANSFORMING BETWEEN CARTESIAN AND POLAR COORDINATE SYSTEMS</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211160848151.png" alt="image-20200211160848151" />
+<p class="caption">image-20200211160848151</p>
+</div>
+<p>Polar coordinates uses an radius <span class="math inline"><em>r</em></span> and an angle <span class="math inline"><em>θ</em></span>, we want the coordinates as <span class="math inline"><em>x</em>, <em>y</em></span> values</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211161055324.png" alt="image-20200211161055324" />
+<p class="caption">image-20200211161055324</p>
+</div>
+<p>Making the Jacobian and taking the determinant</p>
+<blockquote>
+<p>As we move along <span class="math inline"><em>r</em></span>, away from the origin, small regions of space will scale as a function of <span class="math inline"><em>r</em></span></p>
+</blockquote>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211161206898.png" alt="image-20200211161206898" />
+<p class="caption">image-20200211161206898</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211161219453.png" alt="image-20200211161219453" />
+<p class="caption">image-20200211161219453</p>
+</div>
+<h1 id="sandpit">Sandpit</h1>
+<div class="figure">
+<embed src="multivariate_calculus.assets/giphy-1582149855248.webp" />
+<p class="caption">img</p>
+</div>
+<p><strong>Optimization</strong>: greatly related to find inputs that gives us the maximum or the minimum of a function</p>
+<p>Making <span class="math inline"><em>f</em>(<em>x</em>)=0</span> becomes much more complicated, but also ineffective as we can have functions with more then one point with the gradient equals to zero</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211161657504.png" alt="image-20200211161657504" />
+<p class="caption">image-20200211161657504</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211161907016.png" alt="image-20200211161907016" />
+<p class="caption">image-20200211161907016</p>
+</div>
+<ul>
+<li><p>All the peaks are maximums</p></li>
+<li><p><span class="math inline"><em>A</em></span> is the tallest peak, the global maximum</p></li>
+<li><p>All trough are minimums</p></li>
+<li><p><span class="math inline"><em>D</em></span> is the deepest trough, the global minimum</p></li>
+</ul>
+<p>Going to the highest peak can be like walking at night: maybe we don't have a nice analytical expression and each point in the plot are the result of a week of processing in a supercomputer or the result of a practical experiment</p>
+<p><strong>The problem</strong>: the Jacobian points uphill, nut not to the tallest one, if you follow the arrows you will arrive at some hill with all arrows pointing towards you</p>
+<p><strong>In maths</strong> we don't need to follow the arrows, we can just teleport to any region of space - so we are not really walking</p>
+<p>A better analogy is the sandpit:</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211162934945.png" alt="image-20200211162934945" />
+<p class="caption">image-20200211162934945</p>
+</div>
+<p>You're using a sick to poke the sand measure how deep the soil beneath is, you can poke any point in space and you can't see the hills because they're blocked by the sand</p>
+<h1 id="the-hessian">The Hessian</h1>
+<ul>
+<li>Extension of the Jacobian vector</li>
+</ul>
+<p><strong>Takes the second order derivatives into a matrix</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211163301164.png" alt="image-20200211163301164" />
+<p class="caption">image-20200211163301164</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211164852095.png" alt="image-20200211164852095" />
+<p class="caption">image-20200211164852095</p>
+</div>
+<p>We can pass an <span class="math inline"><em>x</em>, <em>y</em>, <em>z</em></span> coordinate to the <em>Hessian</em> and it will return matrix that tells us something about that point in space</p>
+<h2 id="d-example">2-D example</h2>
+<p><br /><span class="math display"><em>f</em>(<em>x</em>, <em>y</em>)=<em>x</em>²+<em>y</em>²</span><br /></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211202140383.png" alt="image-20200211202140383" />
+<p class="caption">image-20200211202140383</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211202420780.png" alt="image-20200211202420780" />
+<p class="caption">image-20200211202420780</p>
+</div>
+<p><br /><span class="math display"><em>f</em>(<em>x</em>, <em>y</em>)=<em>x</em>²−<em>y</em>²</span><br /> At the origin we have a <strong>saddle point</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211203103611.png" alt="image-20200211203103611" />
+<p class="caption">image-20200211203103611</p>
+</div>
+<p>The Hessian is negative, so, it is not a maximum or a minimum</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211203300749.png" alt="image-20200211203300749" />
+<p class="caption">image-20200211203300749</p>
+</div>
+<p>But the gradient is flat</p>
+<p>The slope is coming down in one direction and upwards in another direction</p>
+<p>That feature is called a <strong>saddle point</strong></p>
+<p>They can cause a lot of confusion when searching for a peak</p>
+<h1 id="reality-is-hard">Reality is hard</h1>
+<div class="figure">
+<embed src="multivariate_calculus.assets/giphy-1582150051886.webp" />
+<p class="caption">img</p>
+</div>
+<ol style="list-style-type: decimal">
+<li><p>In reality we deal with <strong>hundreds</strong> or <strong>thousands</strong> of dimensions - we can't simply plot them as a nice landscape but rather use our intuition from 2-D to guide us and enable us to trust the math, because the math works in any case.</p></li>
+<li><p>You could not have a nice analytical formula that describes your problem - even if this formula is in 2-D space, calculating each point can be very expensive, depending on a supercomputer's processing power or laboratory staff</p></li>
+<li><p>Not all functions are nice and smooth - what if your function contains a sharp feature like discontinuity</p></li>
+<li><p>For any number of reasons the function can contain noise, making the Jacobian useless unless we were careful</p></li>
+</ol>
+<p><strong>The question</strong>: how to calculate the Jacobian for problems that we don't even have the function that we're trying to optimize?</p>
+<p><strong>The answer</strong>: numerical methods</p>
+<ul>
+<li>Some problems do not have a nice formula</li>
+<li>Some problems do have a formula, but solving it wit take until the end of time</li>
+</ul>
+<p>There are a range of techniques that allows us to find approximate answers to that questions</p>
+<p><strong>The derivative</strong> measures the slope of two points as their distance tends to zero - if we can't calculate every point for a formula, let's use only what we got to build the derivatives - <strong>approximation</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211204951497.png" alt="image-20200211204951497" />
+<p class="caption">image-20200211204951497</p>
+</div>
+<p>But that's not practical for higher dimension scenarios</p>
+<p>If we start from a initial location and we would like to approximate the Jacobian we could approximate each partial derivative intern:</p>
+<ul>
+<li>Taking a small step on <span class="math inline"><em>x</em></span> allows us to calculate a proximate partial derivative with respect to <span class="math inline"><em>x</em></span></li>
+<li>Taking a small step on <span class="math inline"><em>y</em></span> allows us to calculate a proximate partial derivative with respect to <span class="math inline"><em>y</em></span></li>
+</ul>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211205523355.png" alt="image-20200211205523355" />
+<p class="caption">image-20200211205523355</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200211205535620.png" alt="image-20200211205535620" />
+<p class="caption">image-20200211205535620</p>
+</div>
+<ol style="list-style-type: decimal">
+<li><em>How big should the little step be?</em></li>
+</ol>
+<p><strong>Too big</strong>: bad approximation</p>
+<p><strong>Too small</strong>: numerical issues - if the points are too close, the computer may not register any movement at all (floating point range stuff)</p>
+<ol start="2" style="list-style-type: decimal">
+<li><em>What if the data is a bit noisy?</em></li>
+</ol>
+<p><strong>Simplest approach</strong>: to calculate the gradient using a few different step sizes and taking some kind of average</p>
+<h1 id="multivariate-chain-rule">Multivariate Chain Rule</h1>
+<h2 id="simplifying-the-notation">Simplifying the notation</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219130410601.png" alt="image-20200219130410601" />
+<p class="caption">image-20200219130410601</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219130955869.png" alt="image-20200219130955869" />
+<p class="caption">image-20200219130955869</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219132245788.png" alt="image-20200219132245788" />
+<p class="caption">image-20200219132245788</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/%20note.png" alt="note" />
+<p class="caption">note</p>
+</div>
+<h2 id="univariate-example">Univariate example</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219145925626.png" alt="image-20200219145925626" />
+<p class="caption">image-20200219145925626</p>
+</div>
+<h2 id="multivariate-example">Multivariate example</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219150948007.png" alt="image-20200219150948007" />
+<p class="caption">image-20200219150948007</p>
+</div>
+<p>Differentiating the scaled valued function <span class="math inline"><em>f</em></span> with respect to the <em>input vector</em> <span class="math inline">$\bold{x}$</span> gives us the <strong>Jacobian row vector</strong></p>
+<p>Differentiating a vector valued function <span class="math inline">$\bold{u}$</span> with respect to the <em>scalable variable</em> <span class="math inline"><em>t</em></span> gives us a <strong>column vector of derivatives</strong></p>
+<p><strong>But, and the middle term?</strong></p>
+<p>For the function <span class="math inline">$\bold{x}$</span> wee need to find the derivative of each of the <em>two output variables</em> with respect to each of the <em>two input variables</em> - we end up with <strong>four terms</strong> in total</p>
+<p>This can be arranged as a <strong>matrix</strong> - this object is referred as a <strong>Jacobian</strong></p>
+<blockquote>
+<p>The derivative of <span class="math inline"><em>f</em></span> with respect to <span class="math inline"><em>t</em></span> is the product of <em>the Jacobian of <span class="math inline"><em>f</em></span></em> with the <em>Jacobian of <span class="math inline">$\bold{x}$</span></em> and the <em>derivative vector <span class="math inline">$\bold{u}$</span></em></p>
+</blockquote>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219180638560.png" alt="image-20200219180638560" />
+<p class="caption">image-20200219180638560</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219180728229.png" alt="image-20200219180728229" />
+<p class="caption">image-20200219180728229</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219181536244.png" alt="image-20200219181536244" />
+<p class="caption">image-20200219181536244</p>
+</div>
+<h1 id="simple-neural-networks">Simple Neural Networks</h1>
+<div class="figure">
+<embed src="multivariate_calculus.assets/giphy-1582150254952.webp" />
+<p class="caption">img</p>
+</div>
+<p>Normally they are drawn as something like:</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219181659368.png" alt="image-20200219181659368" />
+<p class="caption">image-20200219181659368</p>
+</div>
+<p>But <strong>fundamentally</strong>, they're just a <strong>mathematical function</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219181809964.png" alt="image-20200219181809964" />
+<p class="caption">image-20200219181809964</p>
+</div>
+<p>It takes variables in and spits variables out - where both of these variables could be vectors</p>
+<h2 id="simplest-possible-case">Simplest possible case</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219181933164.png" alt="image-20200219181933164" />
+<p class="caption">image-20200219181933164</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219182710516.png" alt="image-20200219182710516" />
+<p class="caption">image-20200219182710516</p>
+</div>
+<p>The relation between neural networks and the brain comes from <span class="math inline"><em>σ</em></span>, the activation function</p>
+<div class="figure">
+<embed src="multivariate_calculus.assets/giphy-1582150417646.webp" />
+<p class="caption">img</p>
+</div>
+<p>Neurons in the brain receive information from their neighbors through chemical and electrical stimuli</p>
+<p>When the sum of all these stimulations goes beyond a certain threshold - the neuron activates and starts to stimulating its neighbors</p>
+<p>This behavior can be mathematically expressed by some functions e.g. the hyperbolic tangent function</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219183150712.png" alt="image-20200219183150712" />
+<p class="caption">image-20200219183150712</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219183243412.png" alt="image-20200219183243412" />
+<p class="caption">image-20200219183243412</p>
+</div>
+<p><span class="math inline"><em>t</em><em>a</em><em>n</em><em>h</em></span> belongs to a family of similar functions all with an &quot;s&quot; shape - they're called <em>sigmoids</em> - hence, the name/symbol <strong>sigma</strong></p>
+<h2 id="adding-more-neurons">Adding more neurons</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219183610561.png" alt="image-20200219183610561" />
+<p class="caption">image-20200219183610561</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219183625400.png" alt="image-20200219183625400" />
+<p class="caption">image-20200219183625400</p>
+</div>
+<p>For any number of neurons</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219183655262.png" alt="image-20200219183655262" />
+<p class="caption">image-20200219183655262</p>
+</div>
+<p>Using the algebraic notation</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219183738666.png" alt="image-20200219183738666" />
+<p class="caption">image-20200219183738666</p>
+</div>
+<h2 id="adding-more-outputs">Adding more outputs</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219183823431.png" alt="image-20200219183823431" />
+<p class="caption">image-20200219183823431</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219183908383.png" alt="image-20200219183908383" />
+<p class="caption">image-20200219183908383</p>
+</div>
+<p>Combining in vector form</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219183924985.png" alt="image-20200219183924985" />
+<p class="caption">image-20200219183924985</p>
+</div>
+<h2 id="beginning-to-generalize">Beginning to generalize</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219184019791.png" alt="image-20200219184019791" />
+<p class="caption">image-20200219184019791</p>
+</div>
+<h3 id="hidden-layers">Hidden Layers</h3>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219184129406.png" alt="image-20200219184129406" />
+<p class="caption">image-20200219184129406</p>
+</div>
+<h2 id="in-summary">In summary</h2>
+<p>This is the linear algebra needed to describe the output a simple <em>feed-forward</em> neural network</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219184225358.png" alt="image-20200219184225358" />
+<p class="caption">image-20200219184225358</p>
+</div>
+<h1 id="training">Training</h1>
+<ul>
+<li>Change the weights and biases to do something useful</li>
+<li>Generally, we're speaking of <strong>labeled data</strong></li>
+</ul>
+<h2 id="back-propagation">Back-propagation</h2>
+<p>Looks at the output neurons and works back trough the network</p>
+<p><strong>Objective:</strong> to find the weights and biases that best match the input with the labeled data</p>
+<p>Initially we initialize them as random numbers, then calculate a <em>cost function</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219192512029.png" alt="image-20200219192512029" />
+<p class="caption">image-20200219192512029</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219192522884.png" alt="image-20200219192522884" />
+<p class="caption">image-20200219192522884</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219192804172.png" alt="image-20200219192804172" />
+<p class="caption">image-20200219192804172</p>
+</div>
+<p>At some initial point <span class="math inline"><em>w</em><sub>0</sub></span> - if we could work out the <strong>gradient of <span class="math inline"><em>C</em></span> with respect to the variable <span class="math inline"><em>w</em></span></strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219192931539.png" alt="image-20200219192931539" />
+<p class="caption">image-20200219192931539</p>
+</div>
+<p>Then we could just <strong>head in the opposite direction</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219193000731.png" alt="image-20200219193000731" />
+<p class="caption">image-20200219193000731</p>
+</div>
+<p>More realistic scenario - there are lots of local minimums</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219193050601.png" alt="image-20200219193050601" />
+<p class="caption">image-20200219193050601</p>
+</div>
+<p>And we need to solve this cost function to all of the weights - so we are actually looking for the minimum in the hyper-surface that they form</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219193303248.png" alt="image-20200219193303248" />
+<p class="caption">image-20200219193303248</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219193317802.png" alt="image-20200219193317802" />
+<p class="caption">image-20200219193317802</p>
+</div>
+<blockquote>
+<p>If we want to head downhill / to <span class="math inline"><em>C</em><sub><em>m</em><em>i</em><em>n</em></sub></span> we need to build the <em>Jacobian</em> by putting together the <strong>partial derivatives of the cost function <span class="math inline"><em>C</em></span></strong> with respect to <strong>all of the relevant variables</strong></p>
+</blockquote>
+<p><img src="multivariate_calculus.assets/giphy-1582151932203.webp" alt="img" style="zoom:200%;" /></p>
+<p>Knowing what we have to do, let's write a <em>chain rule expression</em> for the partial derivatives for the <strong>cost</strong> with respect to either the <strong>weight</strong> or the <strong>bias</strong></p>
+<p>The <span class="math inline"><em>a</em><sup>(1)</sup></span> term links those derivatives</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219193626757.png" alt="image-20200219193626757" />
+<p class="caption">image-20200219193626757</p>
+</div>
+<p>It's often convenient to throw the weight plus bias terms to a separate function i.e. to use a new term</p>
+<p>This will allow us to think about differentiating the particular <span class="math inline"><em>σ</em></span> function that we had chosen separately</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219194415443.png" alt="image-20200219194415443" />
+<p class="caption">image-20200219194415443</p>
+</div>
+<p>Now we can navigate trough the <span class="math inline"><em>w</em>, <em>b</em></span> space in order to minimize the cost of the network for a set of training examples</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200219194559285.png" alt="image-20200219194559285" />
+<p class="caption">image-20200219194559285</p>
+</div>
+<h1 id="building-approximate-functions">Building approximate functions</h1>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220114555778.png" alt="image-20200220114555778" />
+<p class="caption">image-20200220114555778</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220114740528.png" alt="image-20200220114740528" />
+<p class="caption">image-20200220114740528</p>
+</div>
+<p>To derive a function that is a good representation of another function at least inside some boundaries - we can do this with <strong>Taylor Series</strong></p>
+<p><span class="math inline"><em>t</em><sup>*</sup></span> is a good representation of <span class="math inline"><em>t</em></span> <strong>around</strong> the <span class="math inline"><em>m</em> = 1.5</span> - but it becomes a poor representation further away from it</p>
+<h1 id="power-series">Power Series</h1>
+<div class="figure">
+<embed src="https://i.giphy.com/media/BdAn5S0xigpO/giphy.webp" />
+<p class="caption">img</p>
+</div>
+<p><strong>Taylor Series</strong> are composed by coefficients in front of increasing powers of <span class="math inline"><em>x</em></span>, a power series</p>
+<p>Example</p>
+<p><span class="math inline"><em>g</em>(<em>x</em>)=<em>a</em> + <em>b</em><em>x</em> + <em>c</em><em>x</em>²+<em>d</em><em>x</em>³+⋯</span></p>
+<p>Potentially going to infinite</p>
+<p>In <strong>Taylor Series</strong> the approximation becomes better and better as we increase the number of terms - a pattern may emerge</p>
+<table>
+<thead>
+<tr class="header">
+<th>Order of approximation</th>
+<th>General Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Zeroth order approximation</td>
+<td><span class="math inline"><em>g</em><sub>0</sub>(<em>x</em>)=<em>a</em></span></td>
+</tr>
+<tr class="even">
+<td>First order approximation</td>
+<td><span class="math inline"><em>g</em><sub>1</sub>(<em>x</em>)=<em>a</em> + <em>b</em><em>x</em></span></td>
+</tr>
+<tr class="odd">
+<td>Second order approximation</td>
+<td><span class="math inline"><em>g</em><sub>2</sub>(<em>x</em>)=<em>a</em> + <em>b</em><em>x</em> + <em>c</em><em>x</em>²</span></td>
+</tr>
+<tr class="even">
+<td>Third order approximation</td>
+<td><span class="math inline"><em>g</em><sub>3</sub>(<em>x</em>)=<em>a</em> + <em>b</em><em>x</em> + <em>c</em><em>x</em>²+<em>d</em><em>x</em>³</span></td>
+</tr>
+<tr class="odd">
+<td>Nth order approximation</td>
+<td><span class="math inline"><em>g</em><sub><em>n</em></sub>(<em>x</em>)=<em>a</em> + <em>b</em><em>x</em> + <em>c</em><em>x</em>²+<em>d</em><em>x</em>³+⋯+<em>k</em><em>x</em><sup><em>n</em></sup></span></td>
+</tr>
+</tbody>
+</table>
+<p>These short sections of the series are called <strong>Truncated series</strong></p>
+<p>The approximations will visually look like:</p>
+<p><strong>Zeroth</strong>: just a straight line, without any angle the best we can do is make it pass trough the point horizontally</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220122628711.png" alt="image-20200220122628711" />
+<p class="caption">image-20200220122628711</p>
+</div>
+<p><strong>First</strong>: we can do a line with an angle, the best approximation would be a line with the same slope as our original function at that point</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220122818730.png" alt="image-20200220122818730" />
+<p class="caption">image-20200220122818730</p>
+</div>
+<p><strong>Second</strong>: now we got a quadratic function, this allows us to make a single curved shape - for the points immediately around our point it's a nice approximation</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220123233669.png" alt="image-20200220123233669" />
+<p class="caption">image-20200220123233669</p>
+</div>
+<p><strong>Third</strong>: we can approximate it even more, now with draw up to two curves</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220123423336.png" alt="image-20200220123423336" />
+<p class="caption">image-20200220123423336</p>
+</div>
+<p><strong>Fourth</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220123456277.png" alt="image-20200220123456277" />
+<p class="caption">image-20200220123456277</p>
+</div>
+<p><strong>Fifth</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220123536055.png" alt="image-20200220123536055" />
+<p class="caption">image-20200220123536055</p>
+</div>
+<p><strong>Animation</strong></p>
+<video src="multivariate_calculus.assets/taylorseries.mp4">
+</video>
+<h1 id="power-series-derivation">Power Series derivation</h1>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220161643277.png" alt="image-20200220161643277" />
+<p class="caption">image-20200220161643277</p>
+</div>
+<blockquote>
+<p>If we know everything about a function at the point <span class="math inline"><em>x</em> = 0</span>:</p>
+<ul>
+<li>Value</li>
+<li>First derivative</li>
+<li>Second derivative</li>
+<li>Nth derivative</li>
+</ul>
+<p>then we can use that information function to reconstruct that function everywhere else</p>
+<p><em>If i know everything about one place, I also know everything about it everywhere</em></p>
+<p>However, this is only true for a certain type of functions that we call <strong>well behaved</strong></p>
+<ul>
+<li>Continuous</li>
+<li>That you can differentiate as many times as you want</li>
+</ul>
+</blockquote>
+<h2 id="example">Example</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220162142361.png" alt="image-20200220162142361" />
+<p class="caption">image-20200220162142361</p>
+</div>
+<h3 id="zeroth-order-approximation">Zeroth order approximation</h3>
+<p>Using only the <span class="math inline"><em>f</em>(<em>x</em>)</span> - the value at that point, the best we can do is a line</p>
+<p>The result isn't even a function of <span class="math inline"><em>x</em></span></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220162242286.png" alt="image-20200220162242286" />
+<p class="caption">image-20200220162242286</p>
+</div>
+<h3 id="first-order-approximation">First order approximation</h3>
+<p>We will use the <strong>value</strong> of the function at <span class="math inline"><em>x</em> = 0</span> and also the <strong>gradient</strong> at <span class="math inline"><em>x</em> = 0</span>, which we will call <strong>f dash</strong> (<span class="math inline"><em>f</em>′</span>) at <span class="math inline">0</span></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220162624745.png" alt="image-20200220162624745" />
+<p class="caption">image-20200220162624745</p>
+</div>
+<div class="figure">
+<embed src="https://i.giphy.com/media/3o7ZeTmU77UlPyeR2w/giphy.webp" />
+<p class="caption">img</p>
+</div>
+<h3 id="second-order-approximation">Second order approximation</h3>
+<p>We will use:</p>
+<ul>
+<li>the value at 0 ( <span class="math inline"><em>f</em>(<em>x</em>)</span> )</li>
+<li>the gradient at 0 ( <span class="math inline"><em>f</em>′(<em>x</em>)</span> )</li>
+<li>the second derivative at 0 ( <span class="math inline"><em>f</em>″(<em>x</em>)</span> )</li>
+</ul>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220170501483.png" alt="image-20200220170501483" />
+<p class="caption">image-20200220170501483</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220170615982.png" alt="image-20200220170615982" />
+<p class="caption">image-20200220170615982</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220170701372.png" alt="image-20200220170701372" />
+<p class="caption">image-20200220170701372</p>
+</div>
+<h3 id="third-order-approximation">Third order approximation</h3>
+<div class="figure">
+<embed src="https://i.giphy.com/media/7SxbCZEfYg1xu/giphy.webp" />
+<p class="caption">img</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220173744071.png" alt="image-20200220173744071" />
+<p class="caption">image-20200220173744071</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220174347239.png" alt="image-20200220174347239" />
+<p class="caption">image-20200220174347239</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220174356622.png" alt="image-20200220174356622" />
+<p class="caption">image-20200220174356622</p>
+</div>
+<p>Note that we could add higher order terms piecewise, and the lower order terms will remain the same</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/0f67e15eda4d56eb46055771008d1df6--fun.jpg" alt="0f67e15eda4d56eb46055771008d1df6--fun" />
+<p class="caption">0f67e15eda4d56eb46055771008d1df6--fun</p>
+</div>
+<h3 id="fourth-order-approximation">Fourth order approximation</h3>
+<p>Let's try to generalize</p>
+<p>Note that the '<span class="math inline">1/6</span>' in the cubic term was a result of having to differentiate a <strong>cubic term twice</strong></p>
+<p>And we know that for the fourth order approximation we will need to calculate the fourth derivative for a function like <span class="math inline"><em>f</em>(<em>x</em>)=<em>a</em><em>x</em><sup>4</sup> + <em>b</em><em>x</em>³+<em>c</em><em>x</em>²+<em>d</em><em>x</em> + <em>e</em></span> , so we will differentiate x to the fourth power three times</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220180916102.png" alt="image-20200220180916102" />
+<p class="caption">image-20200220180916102</p>
+</div>
+<p>The same kind of notation can be used for the lower order terms</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220180953663.png" alt="image-20200220180953663" />
+<p class="caption">image-20200220180953663</p>
+</div>
+<p>Remember that</p>
+<p><span class="math inline">0!=1</span></p>
+<p>So, the <strong>nth</strong> term of the chain will be</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220181110807.png" alt="image-20200220181110807" />
+<p class="caption">image-20200220181110807</p>
+</div>
+<p>Therefore, the complete power series can be written as</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220181144823.png" alt="image-20200220181144823" />
+<p class="caption">image-20200220181144823</p>
+</div>
+<p>This is certainly a <strong>Taylor Series</strong>, but as we're looking at the point <span class="math inline"><em>x</em> = 0</span>, this is often called a <strong><em>Maclaurin Series</em></strong></p>
+<p><img src="multivariate_calculus.assets/200w_s-1582233665747.gif" alt="img" style="zoom:200%;" /></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220181330412.png" alt="image-20200220181330412" />
+<p class="caption">image-20200220181330412</p>
+</div>
+<h1 id="taylor-series">Taylor Series</h1>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220182549426.png" alt="image-20200220182549426" />
+<p class="caption">image-20200220182549426</p>
+</div>
+<p><em>Maclaurin</em> said that if you have all information about a function at <span class="math inline"><em>x</em> = 0</span>, you can reconstruct it everywhere. The <em>Taylor Series</em> simply acknowledges that there isn't nothing special about <span class="math inline"><em>x</em> = 0</span> - it says that if you know everything about a function at <strong>any point</strong> you could reconstruct it everywhere anywhere.</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220182937260.png" alt="image-20200220182937260" />
+<p class="caption">image-20200220182937260</p>
+</div>
+<p>The number that we substitute in <span class="math inline">∞</span> will correspond to the <strong>accuracy</strong> of our series</p>
+<p>Now, let's solve it for an arbitrary point <span class="math inline"><em>P</em></span></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220183548948.png" alt="image-20200220183548948" />
+<p class="caption">image-20200220183548948</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220191103644.png" alt="image-20200220191103644" />
+<p class="caption">image-20200220191103644</p>
+</div>
+<p>By building the approximation around the point <span class="math inline"><em>P</em></span>, when using the gradient temp (<span class="math inline"><em>f</em>′(<em>p</em>)</span>), rather then applying it directly to <span class="math inline"><em>x</em></span> we instead apply to <span class="math inline"><em>x</em> − <em>p</em></span> or <em>How far are you from <span class="math inline"><em>P</em></span>?</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220191356918.png" alt="image-20200220191356918" />
+<p class="caption">image-20200220191356918</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220191652616.png" alt="image-20200220191652616" />
+<p class="caption">image-20200220191652616</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220191701346.png" alt="image-20200220191701346" />
+<p class="caption">image-20200220191701346</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220191822891.png" alt="image-20200220191822891" />
+<p class="caption">image-20200220191822891</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220191846481.png" alt="image-20200220191846481" />
+<p class="caption">image-20200220191846481</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220191904736.png" alt="image-20200220191904736" />
+<p class="caption">image-20200220191904736</p>
+</div>
+<h2 id="examples">Examples</h2>
+<h3 id="cosine-function">1. Cosine function</h3>
+<ul>
+<li>Well behaved</li>
+<li>Continuous everywhere</li>
+<li>Infinitely differentiable</li>
+</ul>
+<p><strong>Maclaurin Series</strong> - to know everything about <span class="math inline"><em>x</em> = 0</span></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220211658712.png" alt="image-20200220211658712" />
+<p class="caption">image-20200220211658712</p>
+</div>
+<p>In this case, the differentiation cycle of trigonometric functions makes that every other term (<span class="math inline"><em>s</em><em>i</em><em>n</em></span> and <span class="math inline">−<em>s</em><em>i</em><em>n</em></span>) of the series receives zero coefficient - these values are in the odd positions of the series, so the elements of the series in odd positions are <span class="math inline">0</span></p>
+<p><span class="math inline"><em>c</em><em>o</em><em>s</em></span> and <span class="math inline">−<em>c</em><em>o</em><em>s</em></span>, at the even positions results in a coefficient of <span class="math inline">1</span> or <span class="math inline">−1</span></p>
+<p>This configuration indicates that <span class="math inline"><em>c</em><em>o</em><em>s</em>(<em>x</em>)</span> is a <em>even function</em>, (only has <span class="math inline"><em>x</em></span> to the power of even numbers) being symmetrical along the vertical axis</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220212430831.png" alt="image-20200220212430831" />
+<p class="caption">image-20200220212430831</p>
+</div>
+<p>The resultant expression doesn't even contains references the cosine function</p>
+<video src="multivariate_calculus.assets/cosine-maclaurin.mp4">
+</video>
+<h3 id="fx-1x---not-well-behaved"><span class="math inline"><em>f</em>(<em>x</em>)=1/<em>x</em></span> - not well behaved</h3>
+<ul>
+<li>Discontinuity</li>
+</ul>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220213906479.png" alt="image-20200220213906479" />
+<p class="caption">image-20200220213906479</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220213920019.png" alt="image-20200220213920019" />
+<p class="caption">image-20200220213920019</p>
+</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ag7Gt5Jorjw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>We can't use <span class="math inline"><em>x</em> = 0</span>, we need to use another point, so solving it by a <em>Taylor Series</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200220223935367.png" alt="image-20200220223935367" />
+<p class="caption">image-20200220223935367</p>
+</div>
+<video src="multivariate_calculus.assets/oneoverx-taylor-series.mp4">
+</video>
+<p><strong>This can tell us things about the power series more generally</strong></p>
+<ol style="list-style-type: decimal">
+<li>The approximation ignores the asymptote, going straight across it</li>
+</ol>
+<ul>
+<li><img src="multivariate_calculus.assets/download-1582249083404.jpeg" alt="img" /></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>The approximations does dot describe at all the regions where <span class="math inline"><em>x</em> &lt; 0</span></li>
+<li>The function is gradually improving for larger values of <span class="math inline"><em>x</em></span> as we increase <span class="math inline"><em>n</em></span> however, for values gather then around five, the function doesn't change as much, not describing larger values of <span class="math inline"><em>x</em></span> and its tail flips up and down as the sign of each additional term flips the function from positive to negative and back again</li>
+</ol>
+<h1 id="linearisation">Linearisation</h1>
+<p>Re-framing the <em>Taylor Series</em> concepts to show things like the <strong>expected error</strong> in an approximation</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225173746421.png" alt="image-20200225173746421" />
+<p class="caption">image-20200225173746421</p>
+</div>
+<p><em>Adding higher power terms</em> <strong>=</strong> <em>improved approximation</em></p>
+<h2 id="change-in-notation">Change in notation</h2>
+<h3 id="changing-the-first-order-approximation-example">Changing the <strong>first-order approximation</strong> (example)</h3>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225173941769.png" alt="image-20200225173941769" />
+<p class="caption">image-20200225173941769</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225174026392.png" alt="image-20200225174026392" />
+<p class="caption">image-20200225174026392</p>
+</div>
+<blockquote>
+<p><strong>The expression says:</strong> starting from the <em>height</em> <span class="math inline"><em>f</em>(<em>p</em>)</span> as you move away from <span class="math inline"><em>p</em></span> your corresponding change in height is equals to your <em>distance away from <span class="math inline"><em>p</em></span></em> <strong>times</strong> <em>the gradient of your function at <span class="math inline"><em>p</em></span></em></p>
+</blockquote>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225175136687.png" alt="image-20200225175136687" />
+<p class="caption">image-20200225175136687</p>
+</div>
+<p>The approximation will be used to evaluate the function <strong>near <span class="math inline"><em>p</em></span></strong> as you must already know about it at <span class="math inline"><em>p</em></span></p>
+<p>Now, the distance from <span class="math inline"><em>x</em></span> to <span class="math inline"><em>p</em></span>, called <span class="math inline">(<em>x</em> − <em>p</em>)</span> will now be called <span class="math inline"><em>Δ</em><em>p</em></span>, meaning a <em>small step size from <span class="math inline"><em>x</em></span> to <span class="math inline"><em>p</em></span></em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225175449784.png" alt="image-20200225175449784" />
+<p class="caption">image-20200225175449784</p>
+</div>
+<p><span class="math inline"><em>x</em></span> can now be expressed in terms of <span class="math inline"><em>p</em></span></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225175527747.png" alt="image-20200225175527747" />
+<p class="caption">image-20200225175527747</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225175536299.png" alt="image-20200225175536299" />
+<p class="caption">image-20200225175536299</p>
+</div>
+<p>Now <br /><span class="math display"><em>x</em> = (<em>p</em> + <em>Δ</em><em>p</em>)</span><br /> Now, without <span class="math inline"><em>x</em></span>, we will put it back 🤔, just by swapping <span class="math inline"><em>p</em></span> for <span class="math inline"><em>x</em></span> - because <span class="math inline"><em>x</em></span> is more commonly used and swapping it will make no difference in this case because everything is is terms of <span class="math inline"><em>p</em></span></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225175940952.png" alt="image-20200225175940952" />
+<p class="caption">image-20200225175940952</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225180800750.png" alt="image-20200225180800750" />
+<p class="caption">image-20200225180800750</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225181351322.png" alt="image-20200225181351322" />
+<p class="caption">image-20200225181351322</p>
+</div>
+<p>When using the first order approximation, instead of evaluating the base function, <em>how big should i expect the error to be</em>?</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225181544609.png" alt="image-20200225181544609" />
+<p class="caption">image-20200225181544609</p>
+</div>
+<p>The gap between the green and other lines grows as we get away from the point <span class="math inline"><em>x</em></span></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225181700373.png" alt="image-20200225181700373" />
+<p class="caption">image-20200225181700373</p>
+</div>
+<p>Thinking about the series:</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline"><em>Δ</em><em>x</em></span> is a small number, <span class="math inline"><em>Δ</em><em>x</em>²</span> should be really small and <span class="math inline"><em>Δ</em><em>x</em><sup>3</sup></span> even smaller</li>
+<li>If the infinite series can <strong>exactly</strong> describe the function</li>
+<li>Although we couldn't evaluate all of the sums, the first chain that we ignore when making a first order approximation is multiplied by <span class="math inline"><em>Δ</em><em>x</em>²</span></li>
+<li>Therefore, the error must be in the order of <span class="math inline"><em>Δ</em><em>x</em>²</span></li>
+</ol>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225182324832.png" alt="image-20200225182324832" />
+<p class="caption">image-20200225182324832</p>
+</div>
+<p>So, we can add to our first order approximation an error term</p>
+<p><strong>This process of taking a function and ignoring terms above <span class="math inline"><em>Δ</em><em>x</em></span> is called linearisation</strong> - we took a potentially very nasty function and approximated it with just a straight line</p>
+<p>Note that</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225213530150.png" alt="image-20200225213530150" />
+<p class="caption">image-20200225213530150</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/download-1582677404325.jpeg" alt="10 Totally Real Reasons Spider-Man Is Leaving The MCU" />
+<p class="caption">10 Totally Real Reasons Spider-Man Is Leaving The MCU</p>
+</div>
+<p>The rise over run approximation and the first-order Taylor Series are the tangent line that goes trough the point <span class="math inline"><em>x</em></span></p>
+<p>In the rise over run approach we used two points to graph a straight line. As the points become closer, the line becomes a better and better approximation for the slope at that point, when the points are indistinguishably close, we say that the line became a tangent, and that it's slope is the same as the slope of the function at that point</p>
+<p>TL;DR</p>
+<p><em>As <span class="math inline"><em>Δ</em><em>x</em></span> becomes closer to zero, the approximation for the function's slope becomes exact</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225213711345.png" alt="image-20200225213711345" />
+<p class="caption">image-20200225213711345</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225213722143.png" alt="image-20200225213722143" />
+<p class="caption">image-20200225213722143</p>
+</div>
+<p><strong>But, what if... they don't</strong></p>
+<p>If the point's don't come closer, <span class="math inline"><em>Δ</em><em>x</em></span> is not fully tending towards zero, there is finite amount of space between the points</p>
+<p>So, the resultant line - the gradient - will have a certain amount of error</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225214540489.png" alt="image-20200225214540489" />
+<p class="caption">image-20200225214540489</p>
+</div>
+<p>Then, it is possible to rearrange the Taylor Series to indicate how big we expect that error to be</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225215109791.png" alt="image-20200225215109791" />
+<p class="caption">image-20200225215109791</p>
+</div>
+<p>The gradient term has been isolated to the left hand side of the expression, the result is exactly the same, but the isolated part is suspiciously similar to the rise over run expression <em>plus</em> a collection of higher order terms</p>
+<p>If we remove everything except for that first term and add the error expression</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225215436971.png" alt="image-20200225215436971" />
+<p class="caption">image-20200225215436971</p>
+</div>
+<p>The expected error is proportional to the distance between the two points</p>
+<p>The method is <em>first order accurate</em></p>
+<p>This is particularly useful to make computer programs that solve these types of programs <strong>numerically</strong> rather then <strong>analytically</strong></p>
+<h1 id="multivariate-taylor-series">Multivariate Taylor Series</h1>
+<h2 id="recap">Recap</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225215747187.png" alt="image-20200225215747187" />
+<p class="caption">image-20200225215747187</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225215803722.png" alt="image-20200225215803722" />
+<p class="caption">image-20200225215803722</p>
+</div>
+<h2 id="two-dimensional-case">Two-dimensional case</h2>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225215902492.png" alt="image-20200225215902492" />
+<p class="caption">image-20200225215902492</p>
+</div>
+<p><strong><span class="math inline"><em>f</em></span> is now a function of two variables <span class="math inline"><em>x</em></span> and <span class="math inline"><em>y</em></span></strong></p>
+<p>The truncated Taylor Series expressions will enable us to approximate the function at some point nearby <span class="math inline">(<em>x</em>, <em>y</em>)</span></p>
+<p>In the 2-D case, the approximation function should always be 2-D</p>
+<h3 id="zeroth-order-approximation-1">Zeroth order approximation</h3>
+<p>It was a straight line with no gradient in 1-D, now it is a straight <strong>plane</strong> with no gradient</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225221521437.png" alt="image-20200225221521437" />
+<p class="caption">image-20200225221521437</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225221547470.png" alt="image-20200225221547470" />
+<p class="caption">image-20200225221547470</p>
+</div>
+<h3 id="first-order-approximation-1">First order approximation</h3>
+<p>From the 1-D case, it should be something with a <em>height</em> and a <em>gradient</em>. In 2-D it still is a straight surface, but that time, it can have an <em>angle</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225221715598.png" alt="image-20200225221715598" />
+<p class="caption">image-20200225221715598</p>
+</div>
+<h3 id="second-order-approximation-1">Second order approximation</h3>
+<p>In the 1-D analogy it has <em>height</em>, <em>angle</em> and a single parabolic <em>curvature</em> - now, we're expecting some kind of <em>parabolic</em> surface</p>
+<p>Using the <em>peak</em> as our approximation point, the parabola is created inside the curve</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225222015868.png" alt="image-20200225222015868" />
+<p class="caption">image-20200225222015868</p>
+</div>
+<p>Choosing a point on the lateral face of the curve we got a <em>saddle function</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225222116705.png" alt="image-20200225222116705" />
+<p class="caption">image-20200225222116705</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225222142894.png" alt="image-20200225222142894" />
+<p class="caption">image-20200225222142894</p>
+</div>
+<p>## Expression</p>
+<h3 id="first-order-approximation-2">First order approximation</h3>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225222253357.png" alt="image-20200225222253357" />
+<p class="caption">image-20200225222253357</p>
+</div>
+<h3 id="second-order-approximation-2">Second order approximation</h3>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225222314373.png" alt="image-20200225222314373" />
+<p class="caption">image-20200225222314373</p>
+</div>
+<p><strong>Using the Jacobian</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225222357343.png" alt="image-20200225222357343" />
+<p class="caption">image-20200225222357343</p>
+</div>
+<p><strong>Using the Hessian</strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225222439037.png" alt="image-20200225222439037" />
+<p class="caption">image-20200225222439037</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225222503847.png" alt="image-20200225222503847" />
+<p class="caption">image-20200225222503847</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225222528692.png" alt="image-20200225222528692" />
+<p class="caption">image-20200225222528692</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225222541537.png" alt="image-20200225222541537" />
+<p class="caption">image-20200225222541537</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225222555920.png" alt="image-20200225222555920" />
+<p class="caption">image-20200225222555920</p>
+</div>
+<p><strong>This can be generalized for even higher dimension curves (hyper-curves)</strong></p>
+<h1 id="newton-raphson-method">Newton-Raphson method</h1>
+<p>Let's say that we have a distribution of heights</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200225224838459.png" alt="image-20200225224838459" />
+<p class="caption">image-20200225224838459</p>
+</div>
+<p>And we want to fit that data to some equation, them we could:</p>
+<ul>
+<li>Carry just the model instead of the entire dataset - we instead just have a model with two parameters</li>
+<li>Faster and simpler to do a lot of operations</li>
+<li>We could make predictions</li>
+</ul>
+<p>But, <strong>how to find the right parameters for the model</strong> - the best <span class="math inline"><em>μ</em></span> and <span class="math inline"><em>σ</em></span> we can?</p>
+<p>We will need an <strong>expression</strong> that indicates <em>how good the model fits the data</em> and look how that goodness of fit varies as we change the parameters <span class="math inline"><em>μ</em></span> and <span class="math inline"><em>σ</em></span></p>
+<p><strong>Example for a simpler case:</strong></p>
+<p>Let's say that we have a function that describes <em>how far away are we from the best value</em> for a certain parameter, <span class="math inline">0</span> means perfect fit, positive values that the model's predictions are too large, and negative values that the model is predicting too low values - in this case we want to find the <strong>roots</strong> of the function right away.</p>
+<p>Or maybe just the <em>value <span class="math inline"><em>f</em>(<em>x</em>)</span> itself says how good our fit is</em>. In this case, we want to find <em>peaks and troughs</em> in o our function. Turns out that the <strong>roots of the first derivative</strong> lays on the same <span class="math inline"><em>x</em></span> as those peaks and troughs. So, we could <em>take the first derivative</em> and finds the <strong>roots</strong> of it.</p>
+<p>If we depend on <em>multiple variables</em>, let's say that we are solving the function as a <strong>partial derivative</strong>, that considers only one variable of interest at a time.</p>
+<p>The <strong>Newton-Raphson method</strong> allows us to take the <em>derivative of a function</em> at some points and <em>converge</em> to some of it's <strong>roots</strong>. The process is:</p>
+<ol style="list-style-type: decimal">
+<li>Make a guess of where a root might be</li>
+<li>Take the <em>slope</em> at that point</li>
+<li><em>Extrapolate</em> the line of the <em>slope</em> until it reaches the <em><span class="math inline"><em>x</em></span> axis</em>, this will be your next guess</li>
+<li>Repeat steps 2 and 3 until convergence</li>
+</ol>
+<p>The formula for the <em>new guess</em> (step 3) is:</p>
+<p><br /><span class="math display">$$
+x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}
+$$</span><br /> Where the new guess <span class="math inline"><em>x</em><sub><em>i</em> + 1</sub></span> depends on the last guess <span class="math inline"><em>x</em><sub><em>i</em></sub></span></p>
+<p>We are actually saying that the function is a <em>straight line</em> and then <strong>guessing</strong> that the <em>root is where the line crosses the <span class="math inline"><em>x</em></span> axis</em> - we hope to find a pretty good approximation to the real root by repeating this process over and over.</p>
+<p>Example - let's use the following expression: <br /><span class="math display"><em>f</em>(<em>x</em>)=<em>x</em>³−5<em>x</em>²+3<em>x</em></span><br /> It its plotted as:</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200227180422119.png" alt="image-20200227180422119" />
+<p class="caption">image-20200227180422119</p>
+</div>
+<p>Rather then this simple function, that we can easily plot, it could:</p>
+<ul>
+<li>Be much more <em>complexer</em> to solve e.g. you don't have enough computer resources to graph it on every point</li>
+<li>Have so much <em>dimensions</em> that we <em>couldn't even graph it</em> at all</li>
+</ul>
+<p>So, with this method we don't need to:</p>
+<ul>
+<li>Calculate <span class="math inline"><em>f</em>(<em>x</em>)</span> for a lot of points and plot the result (to solve it <em>analytically</em>)</li>
+<li>The function could have multiple dimensions, so we wouldn't manage to graph it at all</li>
+<li>Solve it <em>algebraically</em> ($f(x) = 0 $)</li>
+</ul>
+<p><strong>Python implementation and execution:</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Messy definition of linear, quadratic and cubic functions</span>
+<span class="kw">def</span> cubic_function(a<span class="op">=</span><span class="dv">0</span>, b<span class="op">=</span><span class="dv">0</span>, c<span class="op">=</span><span class="dv">0</span>, d<span class="op">=</span><span class="dv">0</span>):
+    <span class="cf">return</span> <span class="kw">lambda</span> x : (a <span class="op">*</span> <span class="bu">pow</span>(x, <span class="dv">3</span>)) <span class="op">+</span> (b <span class="op">*</span> <span class="bu">pow</span>(x, <span class="dv">2</span>)) <span class="op">+</span> (c <span class="op">*</span> x) <span class="op">+</span> d
+
+<span class="kw">def</span> quadratic_function(a<span class="op">=</span><span class="dv">0</span>, b<span class="op">=</span><span class="dv">0</span>, c<span class="op">=</span><span class="dv">0</span>):
+    <span class="cf">return</span> cubic_function(<span class="dv">0</span>, a, b, c)
+
+<span class="kw">def</span> linear_function(a<span class="op">=</span><span class="dv">0</span>, b<span class="op">=</span><span class="dv">0</span>):
+    <span class="cf">return</span> quadradic_function(<span class="dv">0</span>, <span class="dv">0</span>, a, b)
+
+
+
+<span class="co"># The derivative on a point for any function (smaller values of h means more precision)</span>
+<span class="kw">def</span> derivative(function, x, h<span class="op">=</span><span class="fl">0.00001</span>):
+    <span class="co">&#39;&#39;&#39;</span>
+<span class="co">       lim    f(x + h) - f(x)</span>
+<span class="co">       h-&gt;0   ---------------</span>
+<span class="co">                    h </span>
+<span class="co">    &#39;&#39;&#39;</span>
+    <span class="cf">return</span> (function(x <span class="op">+</span> h) <span class="op">-</span> function(x)) <span class="op">/</span> h
+
+<span class="kw">def</span> evaluate_guess(function, guess_x):
+    <span class="co">&#39;&#39;&#39;</span>
+<span class="co">    The distance between a f(guess) and 0</span>
+<span class="co">    &#39;&#39;&#39;</span>
+    <span class="cf">return</span> <span class="bu">abs</span>( <span class="dv">0</span> <span class="op">-</span> function(guess_x) ) <span class="co"># the distance from f(x) and x=0</span>
+
+<span class="kw">def</span> newthon_raphson_step(function, guess_x<span class="op">=</span><span class="dv">0</span>):
+    <span class="co">&#39;&#39;&#39;</span>
+<span class="co">    If you want to find the roots for a function f(x) numerically, the Newton-Raphson&#39;s method says</span>
+
+<span class="co">    1. Choose an initial guess x0</span>
+<span class="co">    2. Calculate new guesses until convergence with</span>
+
+<span class="co">                        f(x_n)</span>
+<span class="co">        x_n+1 = x_n - ---------</span>
+<span class="co">                       f&#39;(x_n)  </span>
+
+<span class="co">    &#39;&#39;&#39;</span>
+    <span class="cf">return</span> guess_x <span class="op">-</span> (function(guess_x) <span class="op">/</span> derivative(function, guess_x) )
+
+
+<span class="kw">def</span> newthon_raphson(function, x_0<span class="op">=</span><span class="dv">0</span>, precision<span class="op">=</span><span class="fl">0.000001</span>, max_iterations<span class="op">=</span><span class="dv">1000</span>):
+    <span class="co">&#39;&#39;&#39;</span>
+<span class="co">    The execution of multiple steps of the Newthon-Raphson&#39;s method, it will repeat until the distance between the guess</span>
+<span class="co">    and x=0 is grather then 0.000001 or if this value isn&#39;t reached after 1000 iterations - we&#39;ll assume that the function</span>
+<span class="co">    is stuck, however, we aren&#39;t actively checking for that</span>
+<span class="co">    &#39;&#39;&#39;</span>
+    best_guess_x <span class="op">=</span> x_0
+    Δ <span class="op">=</span> evaluate_guess(function, x_0)
+    iteration <span class="op">=</span> <span class="dv">0</span>
+
+    <span class="bu">print</span>(<span class="ss">f&#39;#0 iter | x=</span><span class="sc">{</span>best_guess_x<span class="sc">}</span><span class="ss"> | Δ=</span><span class="sc">{Δ}</span><span class="ss"> | f(x)=</span><span class="sc">{</span>function(best_guess_x)<span class="sc">}</span><span class="ss">&#39;</span>)
+
+    <span class="cf">while</span> best_guess_x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="kw">and</span> Δ <span class="op">&gt;</span> precision <span class="kw">and</span> iteration <span class="op">&lt;</span> max_iterations:
+        iteration <span class="op">+=</span> <span class="dv">1</span>
+
+        best_guess_x <span class="op">=</span> newthon_raphson_step(function, best_guess_x)
+        Δ <span class="op">=</span> evaluate_guess(function, best_guess_x)
+
+        <span class="bu">print</span>(<span class="ss">f&#39;#</span><span class="sc">{</span>iteration<span class="sc">}</span><span class="ss"> iter | x = </span><span class="sc">{</span><span class="bu">round</span>(best_guess_x, <span class="dv">6</span>)<span class="sc">:.6f}</span><span class="ss"> | f(x) = </span><span class="sc">{</span><span class="bu">round</span>(function(best_guess_x), <span class="dv">6</span>)<span class="sc">:.6f}</span><span class="ss"> | Δ = </span><span class="sc">{</span><span class="bu">round</span>(Δ, <span class="dv">6</span>)<span class="sc">:.6f}</span><span class="ss">&#39;</span>)
+
+    <span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)
+    <span class="bu">print</span>(<span class="st">&#39;== Newthon-Raphson final result ==&#39;</span>)
+    <span class="bu">print</span>(<span class="ss">f&#39;Root found:             </span><span class="sc">{</span>evaluate_guess(function, best_guess_x) <span class="op">&lt;</span> precision<span class="sc">}</span><span class="ss">&#39;</span>)
+    <span class="bu">print</span>(<span class="ss">f&#39;Iterations:             </span><span class="sc">{</span>iteration<span class="sc">}</span><span class="ss">&#39;</span>)
+    <span class="bu">print</span>(<span class="ss">f&#39;Starting guess:         x = </span><span class="sc">{</span>x_0<span class="sc">}</span><span class="ss">&#39;</span>)
+    <span class="bu">print</span>(<span class="ss">f&#39;Best guess:             x = </span><span class="sc">{</span><span class="bu">round</span>(best_guess_x, <span class="dv">10</span>)<span class="sc">:.10f}</span><span class="ss">&#39;</span>)
+    <span class="bu">print</span>(<span class="ss">f&#39;Solving for best guess: f(</span><span class="sc">{</span><span class="bu">round</span>(best_guess_x, <span class="dv">2</span>)<span class="sc">:.2f}</span><span class="ss">) = </span><span class="sc">{</span><span class="bu">round</span>(best_guess_x, <span class="dv">10</span>)<span class="sc">:.10f}</span><span class="ss">&#39;</span>)
+    <span class="bu">print</span>(<span class="ss">f&#39;Error:                  Δ = </span><span class="sc">{</span><span class="bu">round</span>(Δ, <span class="dv">10</span>)<span class="sc">:.10f}</span><span class="ss">&#39;</span>)
+    <span class="bu">print</span>(<span class="st">&#39;====================================&#39;</span>)
+
+    <span class="cf">if</span> iteration <span class="op">==</span> max_iterations:
+        <span class="bu">print</span>(<span class="st">&#39;&#39;&#39;Maximum iterations reached - probably you reached a close loop, check for loops, try changing x_0 or increase the maximum iteration amount.&#39;&#39;&#39;</span>)
+    <span class="cf">return</span> best_guess_x, Δ, iteration
+
+        
+<span class="co">&#39;&#39;&#39;</span>
+<span class="co">a=1, b=-5 c=3</span>
+<span class="co">&#39;&#39;&#39;</span>
+<span class="co">#f = (pow(x, 3)) - (5 * pow(x, 2)) + (3 * x) # alternative</span>
+
+f <span class="op">=</span> cubic_function(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=-</span><span class="dv">5</span>, c<span class="op">=</span><span class="dv">3</span>) <span class="co"># f(x) = x³ - 5x² + 3x</span>
+newthon_raphson(f, <span class="dv">10</span>)
+newthon_raphson(f, <span class="dv">-10</span>)
+newthon_raphson(f, <span class="fl">2.15</span>)</code></pre></div>
+<div class="figure">
+<embed src="multivariate_calculus.assets/giphy-1583026597024.webp" />
+<p class="caption">img</p>
+</div>
+<p>The function has roots as <code>x = 0 | x = 0.7 | x = 4.3</code></p>
+<p><strong>First guess</strong>: <code>x=10</code> we find a root at <code>x=4.3</code> after <code>7</code> iterations</p>
+<div class="sourceCode"><pre class="sourceCode tex"><code class="sourceCode latex">#0 iter | x=10 Δ=530 f(x)=530
+#1 iter | x = 7.389166 | f(x) = 152.615401 | Δ = 152.615401
+#2 iter | x = 5.746512 | f(x) = 41.891150 | Δ = 41.891150
+#3 iter | x = 4.807295 | f(x) = 9.968451 | Δ = 9.968451
+#4 iter | x = 4.396350 | f(x) = 1.521767 | Δ = 1.521767
+#5 iter | x = 4.306941 | f(x) = 0.064756 | Δ = 0.064756
+#6 iter | x = 4.302784 | f(x) = 0.000137 | Δ = 0.000137
+#7 iter | x = 4.302776 | f(x) = 0.000000 | Δ = 0.000000
+
+== Newthon-Raphson final result ==
+Root found:             True
+Iterations:             7
+Starting guess:         x = 10
+Best guess:             x = 4.3027756378
+Solving for best guess: f(4.30) = 4.3027756378
+Error:                  Δ = 0.0000000013
+====================================</code></pre></div>
+<p><strong>Second guess</strong>: <code>x=-10</code> and we find the root at <code>x=0</code> after <code>10</code> iterations</p>
+<pre><code>#0 iter | x=-10 Δ=1530 f(x)=-1530
+#1 iter | x = -6.203471 | f(x) = -449.754112 | Δ = 449.754112
+#2 iter | x = -3.711532 | f(x) = -131.140034 | Δ = 131.140034
+#3 iter | x = -2.101297 | f(x) = -37.659314 | Δ = 37.659314
+#4 iter | x = -1.090559 | f(x) = -10.515290 | Δ = 10.515290
+#5 iter | x = -0.488772 | f(x) = -2.777577 | Δ = 2.777577
+#6 iter | x = -0.165962 | f(x) = -0.640173 | Δ = 0.640173
+#7 iter | x = -0.030967 | f(x) = -0.097724 | Δ = 0.097724
+#8 iter | x = -0.001465 | f(x) = -0.004405 | Δ = 0.004405
+#9 iter | x = -0.000004 | f(x) = -0.000011 | Δ = 0.000011
+#10 iter | x = 0.000000 | f(x) = 0.000000 | Δ = 0.000000
+
+== Newthon-Raphson final result ==
+Root found:             True
+Iterations:             10
+Starting guess:         x = -10
+Best guess:             x = 0.0000000000
+Solving for best guess: f(0.00) = 0.0000000000
+Error:                  Δ = 0.0000000001
+====================================</code></pre>
+<p><strong>Third guess</strong>:</p>
+<p>We already know the roots <code>4.3</code> and <code>0</code>, our function is cubic, so it might have three roots</p>
+<p>Some guesses could be: <code>x &lt; 10</code>, <code>x &gt; 10</code> or <code>x between 0 and 4.3</code> Running the method with really large or really small values will return the already know roots - a good guess could be at the middle of the known roots, at <code>x=2.15</code>.</p>
+<p>For the guess <code>x=2.15</code> we find a root at <code>x=0.697</code> after <code>3</code> iterations</p>
+<pre><code>#0 iter | x=2.15 Δ=6.724124 f(x)=-6.724124
+#1 iter | x = 0.698484 | f(x) = -0.003172 | Δ = 0.003172
+#2 iter | x = 0.697226 | f(x) = -0.000005 | Δ = 0.000005
+#3 iter | x = 0.697224 | f(x) = -0.000000 | Δ = 0.000000
+
+== Newthon-Raphson final result ==
+Root found:             True
+Iterations:             3
+Starting guess:         x = 2.15
+Best guess:             x = 0.6972243623
+Solving for best guess: f(0.70) = 0.6972243623
+Error:                  Δ = 0.0000000001
+====================================</code></pre>
+<p><strong>However, some thing might go wrong</strong>. some guess could put us in a closed loop, going back and forth between the same values, never getting closer tho the answer</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200227205144469.png" alt="image-20200227205144469" />
+<p class="caption">image-20200227205144469</p>
+</div>
+<p>In this example, the initial guess is <span class="math inline"><em>x</em> = 0</span>, the calculated new guess lead us to <span class="math inline"><em>x</em> = 1</span>, evaluating that results in <span class="math inline"><em>x</em> = 0</span> again, so we would cycle on it forever</p>
+<p><img src="multivariate_calculus.assets/giphy-1583026028723.webp" alt="img" style="zoom:200%;" /></p>
+<p><strong>Running</strong></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">f <span class="op">=</span> cubic_function(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">0</span>, c<span class="op">=-</span><span class="dv">2</span>, d<span class="op">=</span><span class="dv">2</span>) <span class="co"># x³ -2x + 2</span>
+newthon_raphson(f, <span class="dv">0</span>)</code></pre></div>
+<p>results in</p>
+<pre><code>#0 iter | x=0 | Δ=2 | f(x)=2
+#1 iter | x = 1.000000 | f(x) = 1.000000 | Δ = 1.000000
+#2 iter | x = 0.000030 | f(x) = 1.999940 | Δ = 1.999940
+#3 iter | x = 1.000000 | f(x) = 1.000000 | Δ = 1.000000
+#4 iter | x = 0.000030 | f(x) = 1.999940 | Δ = 1.999940
+#5 iter | x = 1.000000 | f(x) = 1.000000 | Δ = 1.000000
+#6 iter | x = 0.000030 | f(x) = 1.999940 | Δ = 1.999940
+#7 iter | x = 1.000000 | f(x) = 1.000000 | Δ = 1.000000
+...
+#995 iter | x = 1.000000 | f(x) = 1.000000 | Δ = 1.000000
+#996 iter | x = 0.000030 | f(x) = 1.999940 | Δ = 1.999940
+#997 iter | x = 1.000000 | f(x) = 1.000000 | Δ = 1.000000
+#998 iter | x = 0.000030 | f(x) = 1.999940 | Δ = 1.999940
+#999 iter | x = 1.000000 | f(x) = 1.000000 | Δ = 1.000000
+#1000 iter | x = 0.000030 | f(x) = 1.999940 | Δ = 1.999940
+
+
+== Newthon-Raphson final result ==
+Root found:             False
+Iterations:             1000
+Starting guess:         x = 0
+Best guess:             x = 0.0000300103
+Solving for best guess: f(0.00) = 0.0000300103
+Error:                  Δ = 1.9999399794
+====================================
+Maximum iterations reached - probably you reached a close loop, check for loops, try changing x_0 or increase the maximum iteration amount.</code></pre>
+<p><strong>Other problem</strong></p>
+<p>When you're close to a ==turning point==, either a <em>minimum</em> or a <em>maximum</em>, the gradient will be very <em>small</em> that when you divide by it the new guess might return you a crazy value, therefore, it wont converge, just trow you somewhere else.</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200227232146994.png" alt="image-20200227232146994" />
+<p class="caption">image-20200227232146994</p>
+</div>
+<p><strong>Example</strong>:</p>
+<p>Using our already known function</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">f <span class="op">=</span> cubic_function(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=-</span><span class="dv">5</span>, c<span class="op">=</span><span class="dv">3</span>) <span class="co"># f(x) = x³ - 5x² + 3x</span>
+newthon_raphson(f, <span class="dv">3</span>)</code></pre></div>
+<p>If our first guess is <span class="math inline"><em>x</em> = 3</span> the first iteration will trow us at <span class="math inline"><em>x</em> = 224999.9...</span></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200227233038467.png" alt="image-20200227233038467" />
+<p class="caption">image-20200227233038467</p>
+</div>
+<p>The gradient at this point is <span class="math inline">0</span></p>
+<pre><code>#0 iter | x=3 | Δ=9 | f(x)=-9
+#1 iter | x = 224999.983822 | f(x) = 11390369418629708.000000 | Δ = 11390369418629708.000000
+#2 iter | x = 150000.382718 | f(x) = 3374913333419859.500000 | Δ = 3374913333419859.500000
+#3 iter | x = 100000.740748 | f(x) = 999972222170842.250000 | Δ = 999972222170842.250000
+#4 iter | x = 66667.736126 | f(x) = 296288333250360.375000 | Δ = 296288333250360.375000
+#5 iter | x = 44445.711830 | f(x) = 87789128875373.984375 | Δ = 87789128875373.984375
+#6 iter | x = 29631.036208 | f(x) = 26011609715097.308594 | Δ = 26011609715097.308594
+#7 iter | x = 19754.579076 | f(x) = 7707142837706.546875 | Δ = 7707142837706.546875
+#8 iter | x = 13170.274868 | f(x) = 2283597801325.270020 | Δ = 2283597801325.270020
+#9 iter | x = 8780.738876 | f(x) = 676621562090.689331 | Δ = 676621562090.689331
+#10 iter | x = 5854.381602 | f(x) = 200480458823.617523 | Δ = 200480458823.617523
+#11 iter | x = 3903.476773 | f(x) = 59401612691.887161 | Δ = 59401612691.887161
+#12 iter | x = 2602.873752 | f(x) = 17600477174.935402 | Δ = 17600477174.935402
+#13 iter | x = 1735.805199 | f(x) = 5214955351.280502 | Δ = 5214955351.280502
+#14 iter | x = 1157.759699 | f(x) = 1545171242.574341 | Δ = 1545171242.574341
+#15 iter | x = 772.396381 | f(x) = 457828058.790962 | Δ = 457828058.790962
+#16 iter | x = 515.488020 | f(x) = 135652455.080934 | Δ = 135652455.080934
+#17 iter | x = 344.216550 | f(x) = 40193116.884430 | Δ = 40193116.884430
+#18 iter | x = 230.036731 | f(x) = 11908935.709860 | Δ = 11908935.709860
+#19 iter | x = 153.918597 | f(x) = 3528482.455130 | Δ = 3528482.455130
+#20 iter | x = 103.175803 | f(x) = 1045415.127232 | Δ = 1045415.127232
+#21 iter | x = 69.351243 | f(x) = 309711.463050 | Δ = 309711.463050
+#22 iter | x = 46.807548 | f(x) = 91738.526207 | Δ = 91738.526207
+#23 iter | x = 31.787566 | f(x) = 27162.842722 | Δ = 27162.842722
+#24 iter | x = 21.788263 | f(x) = 8035.229690 | Δ = 8035.229690
+#25 iter | x = 15.143750 | f(x) = 2371.729702 | Δ = 2371.729702
+#26 iter | x = 10.748096 | f(x) = 696.273432 | Δ = 696.273432
+#27 iter | x = 7.871932 | f(x) = 201.581722 | Δ = 201.581722
+#28 iter | x = 6.042412 | f(x) = 56.186449 | Δ = 56.186449
+#29 iter | x = 4.964147 | f(x) = 14.008927 | Δ = 14.008927
+#30 iter | x = 4.450753 | f(x) = 2.472117 | Δ = 2.472117
+#31 iter | x = 4.312801 | f(x) = 0.156335 | Δ = 0.156335
+#32 iter | x = 4.302827 | f(x) = 0.000790 | Δ = 0.000790
+#33 iter | x = 4.302776 | f(x) = 0.000000 | Δ = 0.000000
+
+
+== Newthon-Raphson final result ==
+Root found:             True
+Iterations:             33
+Starting guess:         x = 3
+Best guess:             x = 4.3027756393
+Solving for best guess: f(4.30) = 4.3027756393
+Error:                  Δ = 0.0000000245
+====================================</code></pre>
+<p>Changing to <span class="math inline"><em>x</em><sub>0</sub> = 3.1</span> we got:</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200227233417419.png" alt="image-20200227233417419" />
+<p class="caption">image-20200227233417419</p>
+</div>
+<pre><code>#0 iter | x=3.1 | Δ=8.959 | f(x)=-8.959
+#1 iter | x = 13.893417 | f(x) = 1758.350053 | Δ = 1758.350053
+#2 iter | x = 9.925548 | f(x) = 515.024498 | Δ = 515.024498
+#3 iter | x = 7.341307 | f(x) = 148.208208 | Δ = 148.208208
+#4 iter | x = 5.717490 | f(x) = 40.607005 | Δ = 40.607005
+#5 iter | x = 4.792381 | f(x) = 9.608784 | Δ = 9.608784
+#6 iter | x = 4.391632 | f(x) = 1.441647 | Δ = 1.441647
+#7 iter | x = 4.306544 | f(x) = 0.058577 | Δ = 0.058577
+#8 iter | x = 4.302783 | f(x) = 0.000112 | Δ = 0.000112
+#9 iter | x = 4.302776 | f(x) = 0.000000 | Δ = 0.000000
+
+
+== Newthon-Raphson final result ==
+Root found:             True
+Iterations:             9
+Starting guess:         x = 3.1
+Best guess:             x = 4.3027756378
+Solving for best guess: f(4.30) = 4.3027756378
+Error:                  Δ = 0.0000000010
+====================================</code></pre>
+<p>We end up using less then a third of iterations to reach the same result</p>
+<p><strong>Bonus</strong>: simple polynomial printer</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># works for the simple cases</span>
+<span class="kw">def</span> simple_polynomial_to_str(<span class="op">*</span>args):
+    
+    <span class="kw">def</span> power(of): <span class="co"># qyuck and dirty way</span>
+        <span class="cf">if</span> of <span class="op">==</span> <span class="dv">2</span>: <span class="cf">return</span> <span class="st">&#39;²&#39;</span>  <span class="co"># to represent a²</span>
+        <span class="cf">if</span> of <span class="op">==</span> <span class="dv">3</span>: <span class="cf">return</span> <span class="st">&#39;³&#39;</span>  <span class="co"># to represent a³</span>
+        <span class="cf">if</span> of <span class="op">==</span> <span class="dv">4</span>: <span class="cf">return</span> <span class="st">&#39;⁴&#39;</span>  <span class="co"># to represent a⁴</span>
+        <span class="cf">if</span> of <span class="op">==</span> <span class="dv">1</span>: <span class="cf">return</span> <span class="st">&#39;&#39;</span>   <span class="co"># to represent a¹ = a</span>
+        <span class="cf">else</span>: <span class="cf">return</span> <span class="ss">f&#39;^</span><span class="sc">{of}</span><span class="ss">&#39;</span>   <span class="co"># to represent a^n e.g. a^-10</span>
+
+    <span class="kw">def</span> multiplier(value):
+        <span class="cf">if</span> value <span class="op">==</span> <span class="dv">1</span>: <span class="cf">return</span> <span class="st">&#39;&#39;</span> <span class="co"># 1*x = x</span>
+        <span class="cf">if</span> value <span class="op">==</span> <span class="dv">-1</span>: <span class="cf">return</span> <span class="st">&#39;-&#39;</span> <span class="co"># -1*x = -x</span>
+        <span class="cf">else</span>: <span class="cf">return</span> value
+
+    terms <span class="op">=</span> []
+    <span class="cf">for</span> index, item <span class="kw">in</span> <span class="bu">enumerate</span>(args):
+        <span class="cf">if</span> item <span class="op">!=</span> <span class="dv">0</span>:
+            <span class="cf">if</span> index <span class="op">!=</span> <span class="bu">len</span>(args) <span class="op">-</span> <span class="dv">1</span>:
+                terms.append(<span class="ss">f&#39;</span><span class="sc">{</span>multiplier(item)<span class="sc">}</span><span class="ss">x</span><span class="sc">{</span>power(<span class="bu">len</span>(args) <span class="op">-</span> (index <span class="op">+</span> <span class="dv">1</span>) )<span class="sc">}</span><span class="ss">&#39;</span>)
+            <span class="cf">else</span>:
+                terms.append(<span class="ss">f&#39;</span><span class="sc">{</span>multiplier(item)<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># the last item (n) is n * x⁰, that&#39;s the same as just n</span>
+    <span class="cf">return</span> <span class="st">&#39;+&#39;</span>.join(terms).replace(<span class="st">&#39;+-&#39;</span>, <span class="st">&#39;-&#39;</span>).replace(<span class="st">&#39;+&#39;</span>, <span class="st">&#39; + &#39;</span>).replace(<span class="st">&#39;-&#39;</span>, <span class="st">&#39; - &#39;</span>)
+
+<span class="bu">print</span>(simple_polynomial_to_str(<span class="dv">1</span>, <span class="dv">-3</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">-2</span>, <span class="dv">10</span>))
+
+<span class="co"># x^5 - 3x⁴ + x³ - 2x + 2</span></code></pre></div>
+<h1 id="gradient-descent">Gradient descent</h1>
+<p><img src="multivariate_calculus.assets/giphy-1583026071799.webp" alt="img" style="zoom:200%;" /></p>
+<h2 id="gradient">Gradient?</h2>
+<blockquote>
+<p><em>This class is a bit confusing at first look, maybe you want to look at some other references <strong>first</strong></em></p>
+<p><strong>Recommendations</strong> below</p>
+</blockquote>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/IHZwWFHWa-w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/xnpdvvCNJEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<blockquote>
+<p>We've already learn that we can use the <em>derivatives</em> to measure the <em>slope</em> of a function at some point and that we could use that slope to navigate to lower or upper points in our function</p>
+<p>We used the <strong>Newton-Raphson method</strong> to find the <em>roots</em> of a certain <em>one-dimensional</em> function <strong>numerically</strong></p>
+<p>In some scenarios we have a function that says <em>how good or bad our model fits some data</em> in this case, we may want to find <strong>troughs</strong> in that function if this means to <em>reduce our model's badness</em> in fitting</p>
+<p>In a <strong>multivariate</strong> space, the <em>derivative at a point</em> isn't enough:</p>
+<ul>
+<li>With 1-D plots, the slope indicated by a <em>scalar</em> can define how steep the function is at that point</li>
+<li>However, in a multivariate case, let's say, 2-D: ==the slope of the function depends on which direction you're looking at==</li>
+<li>Which line is the slope of the function?</li>
+<li><img src="multivariate_calculus.assets/gradientmp4.mp4.gif" title="fig:" alt="gradientmp4.mp4" /></li>
+</ul>
+<p>The solution is using a <strong>vector</strong> instead. A vector is composed by:</p>
+<ul>
+<li>Starting point</li>
+<li>Direction</li>
+<li>Magnitude</li>
+</ul>
+<p>This vector is called <strong>Grad</strong> and it's represented by <span class="math inline">∇<em>f</em>(<em>a</em>, <em>b</em>, ...)</span> as the grad of <span class="math inline"><em>f</em></span> at some point <span class="math inline"><em>a</em>, <em>b</em>, ...</span></p>
+<ul>
+<li><span class="math inline">∇</span> properties:</li>
+<li>Points towards the <em>steepest</em> slope at a point - the direction in which the ==function will increase the fastest==
+<ul>
+<li>This means that we can walk towards <span class="math inline">−∇</span> to get down the hill</li>
+</ul></li>
+<li>Has a <strong>magnitude</strong> of the <em>slope</em> at that point</li>
+</ul>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200229015607756.png" alt="image-20200229015607756" />
+<p class="caption">image-20200229015607756</p>
+</div>
+<p>For real problems - <em>specially training neural networks</em> - we need to find the <strong>troughs</strong> and <strong>peaks</strong> of <strong>a lot</strong> of ==multivariate== functions <strong>a lot</strong> of times</p>
+<ul>
+<li>Solving it algebraically is just not feasible - we need a solution that helps us to <em>navigate trough that multivariate space</em>, generally trying to minimize that function by <em>walking down the hill</em> using some <strong>numerical method</strong></li>
+<li>If we land at some random point in a function, we want to:</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Analyze <em>how steep the hill is</em> around us</li>
+<li>Pick the direction where the hill is the <em>steepest</em></li>
+<li>Find which <em>direction is downwards</em></li>
+<li>Walk in that direction <em>some amount of steps</em> that makes sense i.e. we don't want to land somewhere totally unknown</li>
+</ol>
+</blockquote>
+<p>Let's start by looking at the function <br /><span class="math display"><em>f</em>(<em>x</em>, <em>y</em>)=<em>x</em>²*<em>y</em></span><br /></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200228135451778.png" alt="image-20200228135451778" />
+<p class="caption">image-20200228135451778</p>
+</div>
+<p>Note that the function gets <strong>bigger</strong> when <span class="math inline"><em>x</em></span> is larger and <span class="math inline"><em>y</em></span> is positive and it gets <strong>smaller</strong> whenever <span class="math inline"><em>y</em></span> gets negative</p>
+<p>Spinning and looking down the <span class="math inline"><em>y</em></span> axis we got a projection of a <em>straight line</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200228140053692.png" alt="image-20200228140053692" />
+<p class="caption">image-20200228140053692</p>
+</div>
+<p>Spinning and looking to the <span class="math inline"><em>x</em></span> axis we got an <strong>upward parabola for <span class="math inline"><em>y</em> &gt; 0</span></strong> and an <strong>downward parabola for <span class="math inline"><em>y</em> &lt; 0</span></strong></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200228141153109.png" alt="image-20200228141153109" />
+<p class="caption">image-20200228141153109</p>
+</div>
+<p>And the function is equal to zero along both axis</p>
+<p>The question is: <em>how do i find the fastest or steepest way to get down in this graph?</em></p>
+<p>We can find the <strong>gradient</strong> of the function in respect to <strong>each of its axis</strong> - we could <em>differentiate</em> <span class="math inline"><em>f</em>(<em>x</em>, <em>y</em>)</span> for each variable by ==treating everything else as constants==</p>
+<p><strong>Grad</strong> is a awesome vector - it's the thing that connects <em>calculus</em> to <em>linear algebra</em></p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200228215405192.png" alt="image-20200228215405192" />
+<p class="caption">image-20200228215405192</p>
+</div>
+<p>The Grad vector is defined as: <br /><span class="math display">$$
+\nabla f(a, b, ...) = \begin{bmatrix} \frac{df}{dx}(a, b, \cdots) \\ \frac{df}{dy}(a, b, \cdots) \\ \cdots \end{bmatrix}
+$$</span><br /> In this case:</p>
+<p><img src="multivariate_calculus.assets/image-20200228215334630.png" alt="image-20200228215334630" /> <br /><span class="math display">$$
+\frac{\partial f}{\partial x} = 2xy
+\\
+and
+\\
+\frac{\partial f}{\partial y} = x²
+$$</span><br /> Therefore <br /><span class="math display">$$
+\nabla f = \begin{bmatrix} \frac{df}{dx}(a, b) \\ \frac{df}{dy}(a, b) \end{bmatrix}
+\\
+\nabla f(x, y) = \begin{bmatrix} 2xy \\ x² \end{bmatrix}
+$$</span><br /></p>
+<blockquote>
+<p>We thing about grad as the <strong>combination of two vectors</strong>, the first is</p>
+<p>Both start from some given point <br /><span class="math display">$$
+P = (x, y,z)
+\\
+P=(x, y, f(x,y))
+$$</span><br /> Let's ignore <span class="math inline"><em>z</em></span></p>
+<p>The partial derivative in respect to <span class="math inline"><em>x</em></span> at <span class="math inline"><em>P</em></span> <br /><span class="math display">$$
+Gradient_x = \begin{bmatrix} \frac{\partial f}{\partial x}(a, b) \\ 0\end{bmatrix}
+$$</span><br /> <span class="math inline"><em>G</em><em>r</em><em>a</em><em>d</em><em>i</em><em>e</em><em>n</em><em>t</em><sub><em>x</em></sub> + <em>P</em></span> will result in a vector that starts from <span class="math inline"><em>P</em></span> and goes in the <span class="math inline"><em>x</em></span> direction an amount corresponding to the <strong>slope</strong> in <span class="math inline"><em>x</em></span> direction at that point</p>
+<p>The second vector is</p>
+<p>The partial derivative in respect to <span class="math inline"><em>y</em></span> at some <span class="math inline"><em>P</em></span> <br /><span class="math display">$$
+Gradient_y = \begin{bmatrix} 0 \\ \frac{\partial f}{\partial y}(a, b) \end{bmatrix}
+$$</span><br /> <span class="math inline"><em>G</em><em>r</em><em>a</em><em>d</em><em>i</em><em>e</em><em>n</em><em>t</em><sub><em>y</em></sub> + <em>P</em></span> will result in a vector that starts from <span class="math inline"><em>P</em></span> and goes in the <span class="math inline"><em>x</em></span> direction an amount corresponding to the <strong>slope</strong> in <span class="math inline"><em>x</em></span> direction at that point</p>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200229214831339.png" alt="image-20200229214831339" />
+<p class="caption">image-20200229214831339</p>
+</div>
+<p>Then <br /><span class="math display">$$
+\nabla = Gradient_x + Gradient_y
+\\
+\nabla = \begin{bmatrix} \frac{\partial f}{\partial x}(a, b) \\ 0\end{bmatrix} + \begin{bmatrix} 0 \\ \frac{\partial f}{\partial y}(a, b) \end{bmatrix} = \begin{bmatrix} \frac{\partial f}{\partial x}(a, b) \\ \frac{\partial f}{\partial y}(a, b)\end{bmatrix}
+$$</span><br /> So, if we sum it with <span class="math inline"><em>P</em></span>, the resultant will be a <em>vector</em> that starts at <span class="math inline"><em>P</em></span>and points towards the <em>steepest hill</em> around <span class="math inline"><em>P</em></span> by a direction proportional to the <em>steepness</em> of the hill</p>
+<p><img src="multivariate_calculus.assets/image-20200229215309324.png" alt="image-20200229215309324" /> <br /><span class="math display">$$
+ \nabla = P + \begin{bmatrix} \frac{\partial f}{\partial x}(a, b) \\ \frac{\partial f}{\partial y}(a, b)\end{bmatrix}
+$$</span><br /></p>
+</blockquote>
+<video src="multivariate_calculus.assets/grad.mp4">
+</video>
+<p>The vector <span class="math inline">∇</span> comes in handy because once we calculated it, we can calculate the derivative in any direction by multiplying it with some unit vector</p>
+<p><br /><span class="math display">$$
+\hat{r}=\begin{bmatrix} c \\ d\end{bmatrix}
+$$</span><br /></p>
+<p><br /><span class="math display">$$
+\nabla f = \begin{bmatrix} \frac{df}{dx}(a, b) \\ \frac{df}{dy}(a, b) \end{bmatrix} \cdot \begin{bmatrix} c \\ d\end{bmatrix}
+$$</span><br /></p>
+<p><br /><span class="math display">$$
+df = \frac{\partial f}{\partial x}c + \frac{\partial f}{\partial y}d 
+$$</span><br /></p>
+<ul>
+<li><span class="math inline">∇</span> is aways perpendicular (<span class="math inline">90°</span>) from the contour lines on a contour map</li>
+</ul>
+<p><br /><span class="math display"><em>c</em>²+<em>d</em>²=1</span><br /></p>
+<h2 id="descent">Descent?</h2>
+<p>OK, now we know the <em>direction</em> we want to go: <span class="math inline">−∇</span>, but, <strong>by how much should we walk</strong></p>
+<ul>
+<li>Walk too much and we might go over the valley</li>
+<li>Walk too little and the amount of calculations becomes very expensive</li>
+</ul>
+<p>Turns out that <span class="math inline">∇</span> can help us with that problem too</p>
+<p>If we begin at some point <span class="math inline"><em>S</em><sub>0</sub></span></p>
+<p>We will take <strong>small steps</strong> corresponding with the <em>slope of the hill</em> <br /><span class="math display"><em>S</em><sub><em>n</em> + 1</sub> = <em>S</em><sub><em>n</em></sub> − <em>γ</em> * ∇<em>f</em>(<em>S</em><sub><em>n</em></sub>)</span><br /></p>
+<ul>
+<li>If we overshoot, the direction of <span class="math inline">∇</span> will points us to the right direction</li>
+<li>As we get closer to a turning point, <span class="math inline">∇</span> will become smaller and also our steps</li>
+</ul>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200229221139840.png" alt="image-20200229221139840" />
+<p class="caption">image-20200229221139840</p>
+</div>
+<div class="figure">
+<img src="multivariate_calculus.assets/image-20200229221912711.png" alt="image-20200229221912711" />
+<p class="caption">image-20200229221912711</p>
+</div>
+<div class="figure">
+<embed src="multivariate_calculus.assets/giphy-1583026477151.webp" />
+<p class="caption">img</p>
+</div>
